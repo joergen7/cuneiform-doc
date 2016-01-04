@@ -4,9 +4,9 @@ Application (app)
 =================
 
 An Application (app) can be either explicit or an implicit. An explicit
-Application starts with the keyword *apply* and binds the special parameter
-*task* to one or more tasks identified by their IDs. An implicit application is
-equivalent to an explicit application with exactly one task ID.
+Application starts with the keyword ``apply`` and binds the special parameter
+``task`` to a :ref:`syntax_compoundexpr` of Task Definitions. An implicit
+application is equivalent to an explicit application with exactly one task ID.
 
 A :ref:`syntax_expr` can be an Application.
 
@@ -16,11 +16,12 @@ A :ref:`syntax_expr` can be an Application.
 
 ::
 
-    app ::= 'apply' '(' 'task' ':' ID+ ( ',' binding )* ')'
+    app ::= 'apply' '(' 'task' ':' compoundexpr ( ',' binding )* ')'
           | ID '(' ( binding ( ',' binding )* )? ')'
     
 References:
 
+- :ref:`syntax_compoundexpr`
 - :ref:`syntax_binding`
 
 ID:
@@ -30,11 +31,11 @@ ID:
 Examples
 --------
 
-An implicit Application of the task *sim* consuming no input parameters::
+An implicit Application of the task ``sim`` consuming no input parameters::
 	
     sim()
     
-An implicit Application of the task *greet* binding its only parameter *person*
+An implicit Application of the task ``greet`` binding its only parameter ``person``
 to a Compound Expression consisting of three string literals::
 	
     greet( person: "Jenny" "Peter" "John" )
@@ -43,8 +44,8 @@ An explicit Application of the task sim::
 	
     apply( task: sim )
     
-An explicit application of the tasks *bowtie2-align* and *bwa-align* binding
-their two input parameters *idx* and *fastq*::
+An explicit application of the tasks ``bowtie2-align`` and ``bwa-align`` binding
+their two input parameters ``idx`` and ``fastq``::
 	
     apply( task:  bowtie2-align bwa-align,
            idx:   bowtie2-idx bwa-idx

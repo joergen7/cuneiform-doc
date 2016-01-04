@@ -48,10 +48,10 @@ Complete Cuneiform syntax in EBNF::
                    
     cond         ::= 'if' compoundexpr 'then' compoundexpr 'else' compoundexpr 'end'
     
-    app          ::= 'apply' '(' 'task' ':' ID+ ( ',' binding )* ')'
+    app          ::= 'apply' '(' 'task' ':' compoundexpr ( ',' binding )* ')'
                    | ID '(' ( binding ( ',' binding )* )? ')'
                    
-    cur          ::= 'curry' '(' 'task' ':' ID+ ( ',' binding )+ ')'
+    cur          ::= 'curry' '(' 'task' ':' compoundexpr ( ',' binding )+ ')'
                    
     binding      ::= ID ':' compoundexpr
     
