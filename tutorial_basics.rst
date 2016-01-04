@@ -13,7 +13,7 @@ Difficulty
   Basic
   
 Duration
-  45 min
+  30 min
   
 Prerequisites
   Basic programming background. A working installation of Cuneiform (see
@@ -97,7 +97,9 @@ sees a variable like ``x`` or ``person`` the interpreter should shellace that
 variable with whatever expression is bound to it. You will see later, that it is
 possible to assign quite complex expressions. Nevertheless, an assignment never
 triggers any computation. It just binds an (unevaluated) expression to a
-variable.
+variable. This is called a Call-By-Name evaluation strategy. In this, Cuneiform
+differs from most general purpose programming languages, which use a
+Call-By-Value evaluation strategy.
 
 Queries
 ^^^^^^^
