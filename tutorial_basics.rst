@@ -72,6 +72,9 @@ entering on the command line::
   
 .. hint::
    You can exit the Cuneiform interactive shell by entering ``quit;``.
+   
+If you have not yet installed Cuneiform, please refer to the :ref:`setup`
+section.
   
 An Assignment binds an expression to a variable. Where the variable name appears
 on the left-hand side of an equals symbol while the expression to be bound

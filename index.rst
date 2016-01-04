@@ -12,6 +12,9 @@ This document is supposed to serve as both an exhaustive specification of the
 Cuneiform workflow language as well as a primer for users new to the topic of
 scientific workflows.
 
+The sources for this documentation are available on
+`GitHub <https://github.com/joergen7/cuneiform-doc>`_.
+
 .. toctree::
    :maxdepth: 2
 
