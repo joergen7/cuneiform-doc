@@ -32,16 +32,7 @@ Assignment a-1.2
     
     concat2( a: "bla", b: "blub" );
     concat3( a: "sha", b: "lala" );
-    
-.. attention::
-   When executing ``concat2`` you may receive an error saying::
-   	   
-       IndentationError: unexpected indent
-       
-   If so, make sure you are running the latest Cuneiform version 2.0.2 which
-   makes you indent Python tasks. Alternatively, you can workaround this error
-   by deleting the leading two spaces in ``concat2``.
-    
+        
     
 Assignment a-1.3
 ^^^^^^^^^^^^^^^^
