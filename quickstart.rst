@@ -27,8 +27,11 @@ The following software has to be available on your system:
 .. hint::
    If you are running a Debian-based operatin system you can install these
    packages simply by entering::
-   	   
-       sudo apt-get install git virtualbox chefdk vagrant
+
+       sudo apt-get install -y gdebi
+       wget https://opscode-omnibus-packages.s3.amazonaws.com/debian/6/x86_64/chefdk_0.10.0-1_amd64.deb
+       sudo gdebi chefdk_0.10.0-1_amd64.deb
+       sudo apt-get install git virtualbox vagrant
    
 Setting up a VM
 ---------------
