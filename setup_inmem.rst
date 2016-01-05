@@ -9,8 +9,8 @@ Setting Up a Temporary File System
 ----------------------------
 
 A prerequisite for running Cuneiform in-memory is the existence of a temporary
-file system. Most Linux distributions come with such a RAM file system already
-set up by default. The mount point of this default temporary disk is
+file system. Most Linux distributions come with such a temporary file system
+already set up by default. The mount point of this default temporary disk is
 ``/dev/shm``. You can verify its existence by entering in a command line
 terminal::
 	
