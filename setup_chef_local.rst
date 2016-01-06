@@ -35,7 +35,9 @@ Please install the following packages:
 .. hint::
    You can do so by entering in a command line terminal::
 	
-       sudo apt-get install git chefdk
+       wget https://opscode-omnibus-packages.s3.amazonaws.com/debian/6/x86_64/chefdk_0.10.0-1_amd64.deb
+       sudo dpkg -i chefdk_0.10.0-1_amd64.deb
+       sudo apt-get install git
     
     
 Download and Install

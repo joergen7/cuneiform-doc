@@ -29,8 +29,9 @@ The following software has to be available on your system:
    If you are running a Debian-based operatin system you can install these
    packages simply by entering::
    	   
-       sudo apt-get install git virtualbox chefdk vagrant
-       
+       wget https://opscode-omnibus-packages.s3.amazonaws.com/debian/6/x86_64/chefdk_0.10.0-1_amd64.deb
+       sudo dpkg -i chefdk_0.10.0-1_amd64.deb
+       sudo apt-get install git virtualbox vagrant       
    
 Setting up a VM
 ---------------
@@ -39,6 +40,17 @@ Clone the `chef-cuneiform <https://github.com/joergen7/chef-cuneiform>`_
 repository by opening a command line terminal and entering::
 	
     git clone https://github.com/joergen7/chef-cuneiform.git
+    
+.. hint::
+    If you are living behind a proxy then update the ``.kitchen.yml`` file in the ``chef-cuneiform`` folder by updating the ``provisioner:`` entry as follows:
+
+    .. code-block:: yaml
+
+        provisioner:
+          name: chef_zero
+          http_proxy: http://proxy.example.com:PORT
+          https_proxy: http://proxy.example.com:PORT
+
     
 Change into the cloned directory and have Chef create a VM by entering::
 	

@@ -6,7 +6,7 @@ immense speed up if intermediate and ouput data are small. The guide assumes
 that a :ref:`setup_chef_local` is in place.
 
 Setting Up a Temporary File System
-----------------------------
+----------------------------------
 
 A prerequisite for running Cuneiform in-memory is the existence of a temporary
 file system. Most Linux distributions come with such a temporary file system
