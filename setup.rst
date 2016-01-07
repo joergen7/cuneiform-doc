@@ -3,7 +3,11 @@
 Setup
 =====
 
-This section describes various deployment scenarios for Cuneiform.
+This section describes various deployment scenarios for Cuneiform. The most
+direct way to start Cuneiform is to
+[download the jar](http://www.cuneiform-lang.org/download/) it and run it right
+away. Apart from that, there are a number of alternative deployment methods
+which are documented here.
 
 .. hint::
    There are more deployment options for Cuneiform not documented here. In
