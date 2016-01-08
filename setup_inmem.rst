@@ -57,6 +57,6 @@ and change the value of the ``-l`` option from ``/tmp/cf-cache`` to
 ``/dev/shm/cf-cache``. Afterwards, the Java command should look like this::
 
     #!/usr/bin/env bash
-    nice -n 19 java -cp "..." de.huberlin.wbi.cuneiform.cmdline.main.Main -l /dev/shm/cf-cache $@
+    nice -n 19 java -jar ... -l /dev/shm/cf-cache $@  
     
 Cuneiform will now run in-memory, never exceeding its preset memory limit.
