@@ -9,7 +9,7 @@ All syntax diagrams have been generated using the
 
 Complete Cuneiform syntax in EBNF::
 
-    script       ::= stat+
+    script       ::= stat*
 
     stat         ::= query
                    | assign

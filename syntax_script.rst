@@ -12,7 +12,7 @@ a series of declarations in the form of a :ref:`syntax_stat`.
 
 ::
 
-    script ::= stat+
+    script ::= stat*
     
 References:
 
