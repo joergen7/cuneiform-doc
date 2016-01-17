@@ -1,9 +1,9 @@
-.. _syntax_cond:
+.. _syntax_cnd:
 
-Conditional (cond)
+Conditional (cnd)
 ==================
 
-A Conditional (cond) has a clause :ref:`syntax_compoundexpr`, a then Compound
+A Conditional (cnd) has a clause :ref:`syntax_compoundexpr`, a then Compound
 Expression, and an else Compound Expression. If the clause evaluates to *nil*,
 the Conditional evaluates to the else Compound Expression. Otherwise it
 evaluates to the then Compound Expression.
@@ -16,7 +16,7 @@ A :ref:`syntax_expr` can be a Conditional.
 
 ::
 
-    cond ::= 'if' compoundexpr 'then' compoundexpr 'else' compoundexpr 'end'
+    cnd ::= 'if' compoundexpr 'then' compoundexpr 'else' compoundexpr 'end'
     
 References:
 

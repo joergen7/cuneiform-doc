@@ -42,11 +42,11 @@ Complete Cuneiform syntax in EBNF::
     expr         ::= ID
                    | INTLIT
                    | '"' STRLIT '"'
-                   | cond
+                   | cnd
                    | app
                    | cur
                    
-    cond         ::= 'if' compoundexpr 'then' compoundexpr 'else' compoundexpr 'end'
+    cnd          ::= 'if' compoundexpr 'then' compoundexpr 'else' compoundexpr 'end'
     
     app          ::= 'apply' '(' 'task' ':' compoundexpr ( ',' binding )* ')'
                    | ID '(' ( binding ( ',' binding )* )? ')'
@@ -61,7 +61,7 @@ Complete Cuneiform syntax in EBNF::
    syntax_app
    syntax_assign
    syntax_compoundexpr
-   syntax_cond
+   syntax_cnd
    syntax_cur
    syntax_param
    syntax_inparam
