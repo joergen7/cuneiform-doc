@@ -12,4 +12,5 @@ website.
    :maxdepth: 2
 
    tutorial_basics
+   tutorial_files
    tutorial_solutions
