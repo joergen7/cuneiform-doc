@@ -15,3 +15,31 @@ Duration
   
 Prerequisites
   Cuneiform basics (see :ref:`tutorial_basics`).
+  
+  
+Introduction
+------------
+
+
+
+
+Explanation and Examples
+------------------------
+
+Using Files
+^^^^^^^^^^^
+
+
+Mapping Over Lists
+^^^^^^^^^^^^^^^^^^
+
+
+Processing Lists as a Whole
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Assignments
+-----------
+
+Assignment a-2.1
+^^^^^^^^^^^^^^^^
