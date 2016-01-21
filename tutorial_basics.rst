@@ -1,3 +1,5 @@
+.. _tutorial_basics:
+
 Cuneiform Basics
 ================
 
@@ -159,6 +161,8 @@ easy to learn) while, at the same time, to tap the potential of all the
 supported foreign languages.
 
 Let's look at an example adding two numbers
+
+.. _e-1-5:
 
 Example e-1.5::
 	
