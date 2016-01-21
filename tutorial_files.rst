@@ -106,7 +106,7 @@ Assignment a-2.1
 Consider the variables `a` and `b` defined as follows::
     
     deftask to-file( out( File ) : str )in bash *{
-      echo $content > $out
+      echo $str > $out
     }*
         
     a = to-file( str: "Bob" "Martha" "Eva" );
