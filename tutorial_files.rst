@@ -3,8 +3,8 @@ Files and Lists
 
 Learning Objective
   This tutorial teaches you how to use Cuneiform's type system and how to use
-  files. Additionally, it introduces lists and it is shown how to apply tasks to
-  lists, how to map and aggregate over lists and how to return lists from tasks.
+  files. Additionally, it introduces lists and it is shown how to map and
+  aggregate over lists and how to return lists from tasks.
   
   
 Difficulty
@@ -19,6 +19,18 @@ Prerequisites
   
 Introduction
 ------------
+
+
+    What is this tutorial about?
+    Why are the information important?
+    What are the communicated information used for?
+    What can the reader expect to know after having absolved the tutorial?
+
+
+
+
+Explanation and Examples
+------------------------
 
 Cuneiform is a workflow language with a black-box data model. I.e., Cuneiform
 has no data model for the data exchanged among tasks. Tasks can produce data in
@@ -42,10 +54,6 @@ signature. In general, any argument in a task application can be a list. In this
 tutorial we consider three basic use cases of lists: (i) mapping a task to each
 element of a list, (ii) consuming a list as a whole, (iii) defining a task that
 returns a list.
-
-
-Explanation and Examples
-------------------------
 
 Types
 ^^^^^
@@ -160,7 +168,7 @@ output parameter in angle brackets `<>`.
 
 Example e-2.5::
 	
-    deftask split( <out( File )> : file( File ) )in bash *{
+    deftask split4( <out( File )> : file( File ) )in bash *{
       split -d -l 4 -a 6 $file out
       out=out*
     }*
@@ -170,10 +178,10 @@ Example e-2.5::
     
     filelist;
 
-The task `split` takes a file and partitions it. A new partition is
+The task `split4` takes a file and partitions it. A new partition is
 generated for every four lines in the input file. A list of files is returned
-one for each 4 lines. When we apply `split` to a file containing 8 lines, 2
-output files are produced which are stored in the variable `filelist`.
+enumerating the partitions. When we apply `split4` to a file containing 8 lines,
+2 output files are produced which are stored in the variable `filelist`.
 
 
 Assignments
@@ -182,16 +190,16 @@ Assignments
 Assignment a-2.1
 ^^^^^^^^^^^^^^^^
 
-Define a task `to-string` which takes a file and returns its content as a
-string. Test the task in the Cuneiform interactive shell. Use it on a list of
-files.
+How many files are produced when applying the task `split4` to a list
+with two files, each containing 8 lines? Test your answer in the Cuneiform
+interactive shell.
 
 Assignment a-2.2
 ^^^^^^^^^^^^^^^^
 
-How many files are produced when applying the task split to a list
-with two files, each containing 8 lines? Test your answer in the Cuneiform
-interactive shell.
+Define a task `to-string` which takes a file and returns its content as a
+string. Test the task in the Cuneiform interactive shell. Use it on a list of
+files.
 
 Assignment a-2.3
 ^^^^^^^^^^^^^^^^
@@ -199,3 +207,63 @@ Assignment a-2.3
 Define a workflow which consumes a text file. The workflow partitions the file
 one line for each partition and counts the words in each line. The resulting
 word counts are added in a third step.
+
+
+Solutions
+---------
+
+Assignment a-2.1
+^^^^^^^^^^^^^^^^
+
+Each 8-line file produces 2 output files. Since the split task is called for
+each of the two files, the output set contains 4 files.
+    
+Assignment a-2.2
+^^^^^^^^^^^^^^^^
+
+::
+	
+    deftask to-string( out : file( File ) )in bash *{
+      out=`cat $file`
+    }*
+
+Assignment a-2.3
+^^^^^^^^^^^^^^^^
+
+::
+	
+    deftask to-file( out( File ) : content )in bash *{
+      echo $content > $out
+    }*
+
+    deftask cat( out( File ) : <file( File )> )in bash *{
+      cat ${file[@]} > $out
+    }*
+
+    deftask split( <out( File )> : file( File ) )in bash *{
+      split -d -l 1 -a 6 $file out
+      out=out*
+    }*
+
+    deftask wc( n : file( File ) )in bash *{
+      n=`wc -w $file | awk {'print $1'}`
+    }*
+    
+    deftask sum( s : <n> )in perl *{
+      $s = eval join '+', @n;
+    }*
+    
+    contentlist = "if thou"
+                  "must love me"
+                  "let it"
+                  "be"
+                  "for nought";
+    
+    file = cat( file: to-file( content: contentlist ) );
+    
+    partitionlist = split( file: file );
+    countlist = wc( file: partitionlist );
+    s = sum( n: countlist );
+    
+    s;
+
