@@ -175,6 +175,10 @@ which is here ``add``. Next is the :ref:`syntax_sign` declaring one output
 variable ``c`` and, separated by a ``:``, two input variables ``a`` and ``b``.
 Furthermore, we state that the task body will be written ``in perl``.
 
+.. hint::
+   It is possible to define tasks without any input parameters. In contrast, a
+   task must have at least one output parameter.
+
 The Perl part adds the values of ``a`` and ``b`` and stores the result in the
 variable ``c``. We can now apply this task like so
 
