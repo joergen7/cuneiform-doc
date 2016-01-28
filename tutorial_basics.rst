@@ -241,7 +241,7 @@ happen to the value of ``y`` if you update the value of ``x`` to, say,
 Solutions
 ---------
 
-Assignment a-1.1
+Solution a-1.1
 ^^^^^^^^^^^^^^^^
 
 ::
@@ -252,7 +252,7 @@ Assignment a-1.1
     
     square( a: 5 );
     
-Assignment a-1.2
+Solution a-1.2
 ^^^^^^^^^^^^^^^^
 
 ::
@@ -269,7 +269,7 @@ Assignment a-1.2
     concat3( a: "sha", b: "lala" );
         
     
-Assignment a-1.3
+Solution a-1.3
 ^^^^^^^^^^^^^^^^
 
 Given the following state::

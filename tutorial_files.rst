@@ -20,13 +20,12 @@ Prerequisites
 Introduction
 ------------
 
-
-    What is this tutorial about?
-    Why are the information important?
-    What are the communicated information used for?
-    What can the reader expect to know after having absolved the tutorial?
-
-
+This tutorial is about handling files and lists of files in Cuneiform. Files are
+a common method for scientific tools and libraries to exchange data.
+Furthermore, by partitioning files and applying tasks independently for each
+partition we achieve data parallelism. You learn about the type `File` and
+how to define tasks consuming and producing files. Furthermore, you learn about
+lists and how to map over and aggregate them.
 
 
 Explanation and Examples
@@ -212,13 +211,13 @@ word counts are added in a third step.
 Solutions
 ---------
 
-Assignment a-2.1
+Solution a-2.1
 ^^^^^^^^^^^^^^^^
 
 Each 8-line file produces 2 output files. Since the split task is called for
 each of the two files, the output set contains 4 files.
     
-Assignment a-2.2
+Solution a-2.2
 ^^^^^^^^^^^^^^^^
 
 ::
@@ -227,7 +226,7 @@ Assignment a-2.2
       out=`cat $file`
     }*
 
-Assignment a-2.3
+Solution a-2.3
 ^^^^^^^^^^^^^^^^
 
 ::
