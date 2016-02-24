@@ -21,7 +21,9 @@ The sources for this documentation are available on
    quickstart
    setup
    tutorial
-   syntax	      
+   syntax
    semantics
-
+   Manual: cf <http://cuneiform-lang.org/man/cf/index.html>
+   Manual: cre <http://cuneiform-lang.org/man/cre/index.html>
+   Manual: effi <http://cuneiform-lang.org/man/effi/index.html>
 
