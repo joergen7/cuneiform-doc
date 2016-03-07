@@ -4,8 +4,8 @@ Singular Expression (expr)
 ==========================
 
 A Singular Expression is either an ID, acting as a placeholder for expression,
-an INTLIT, a STRLIT enclosed in quotes, a :ref:`syntax_cnd`, an
-:ref:`syntax_app`, or a :ref:`syntax_cur`.
+an INTLIT, a STRLIT enclosed in quotes, a :ref:`syntax_cnd`, or an
+:ref:`syntax_app`.
 
 An Expression can be part of a :ref:`syntax_compoundexpr`.
 
@@ -20,17 +20,15 @@ An Expression can be part of a :ref:`syntax_compoundexpr`.
            | '"' STRLIT '"'
            | cnd
            | app
-           | cur
     
 References:
 
 - :ref:`syntax_cnd`
 - :ref:`syntax_app`
-- :ref:`syntax_cur`
 
 ID:
    An ID is a regular string beginning with a letter and containing letters,
-   numbers, or the symbols -, _, +, \*, or / and not being a keyword.
+   numbers, or the symbols -, _, or . and not being a keyword.
    
 INTLIT:
    An INTLIT is an integer literal either being a single-digit number from 0 to

@@ -3,9 +3,8 @@
 Input Parameter (inparam)
 =========================
 
-An Input Parameter (inparam) is either a :ref:`syntax_param`, a list of
-correlated elements of the form of a :ref:`syntax_name`, or a declaration of a
-combination without replacement. 
+An Input Parameter (inparam) is either a :ref:`syntax_param` or a list of
+correlated elements of the form of a :ref:`syntax_name`.
 
 An Input Parameter can appear in the input parameter list of a
 :ref:`syntax_sign`.
@@ -18,7 +17,6 @@ An Input Parameter can appear in the input parameter list of a
 
     inparam ::= param
               | '[' name+ ']'
-              | '{' 'comb' 'noreplace' name ':' ID+ '}'
     
 References:
 
@@ -27,6 +25,6 @@ References:
 
 ID:
    An ID is a regular string beginning with a letter and containing letters,
-   numbers, or the symbols -, _, +, \*, or / and not being a keyword.
+   numbers, or the symbols -, _, or . and not being a keyword.
 
 

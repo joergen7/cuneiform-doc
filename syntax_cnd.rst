@@ -10,9 +10,9 @@ evaluates to the then Compound Expression.
 
 A :ref:`syntax_expr` can be a Conditional.
 
-**cond:**
+**cnd:**
 
-.. image:: img/cond.png
+.. image:: img/cnd.png
 
 ::
 

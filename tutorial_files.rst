@@ -173,7 +173,7 @@ Example e-2.5::
     }*
     
     file = cat( file: to-file( content: 1 2 3 4 5 6 7 8 ) );
-    filelist = split( file: file );
+    filelist = split4( file: file );
     
     filelist;
 

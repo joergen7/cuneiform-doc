@@ -4,9 +4,7 @@ Task Signature (sign)
 =====================
 
 A Signature (sign) comprises a list of output elements of the form of a
-:ref:`syntax_param`, an optional list of elements of the form of a
-:ref:`syntax_name`, enumerating input parameters correlated with the task, and a
-list of elements of the form of an :ref:`syntax_inparam`.
+:ref:`syntax_param` and a list of elements of the form of an :ref:`syntax_inparam`.
 
 A Signature is a specification of all output, and input parameters in a
 :ref:`syntax_defun`.
@@ -17,7 +15,7 @@ A Signature is a specification of all output, and input parameters in a
 
 ::
 
-    sign ::= '(' param+ ':'( '[' 'task' name+ ']' )? inparam* ')'
+    sign ::= '(' param+ ':' inparam* ')'
 
     
 References:
@@ -57,7 +55,3 @@ instance::
 	
     ( <out> : x )
     
-A signature correlating the parameter *x* with the task and returning an output
-*out*::
-	
-    ( out : [task x] )

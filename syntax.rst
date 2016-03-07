@@ -20,11 +20,10 @@ Complete Cuneiform syntax in EBNF::
     defun        ::= 'deftask' ID sign( '{' assign+ '}'
                                       | 'in' lang '*{' BODY '}*' )
     
-    sign         ::= '(' param+ ':'( '[' 'task' name+ ']' )? inparam* ')'
+    sign         ::= '(' param+ ':' inparam* ')'
     
     inparam      ::= param
                    | '[' name+ ']'
-                   | '{' 'comb' 'noreplace' name ':' ID+ '}'
     
     param        ::= name
                    | '<' name '>'
@@ -44,14 +43,10 @@ Complete Cuneiform syntax in EBNF::
                    | '"' STRLIT '"'
                    | cnd
                    | app
-                   | cur
                    
     cnd          ::= 'if' compoundexpr 'then' compoundexpr 'else' compoundexpr 'end'
     
-    app          ::= 'apply' '(' 'task' ':' compoundexpr ( ',' binding )* ')'
-                   | ID '(' ( binding ( ',' binding )* )? ')'
-                   
-    cur          ::= 'curry' '(' 'task' ':' compoundexpr ( ',' binding )+ ')'
+    app          ::= ID '(' ( binding ( ',' binding )* )? ')'
                    
     binding      ::= ID ':' compoundexpr
     
@@ -62,7 +57,6 @@ Complete Cuneiform syntax in EBNF::
    syntax_assign
    syntax_compoundexpr
    syntax_cnd
-   syntax_cur
    syntax_param
    syntax_inparam
    syntax_lang

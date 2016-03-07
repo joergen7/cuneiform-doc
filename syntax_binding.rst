@@ -22,6 +22,6 @@ References:
 
 ID:
    An ID is a regular string beginning with a letter and containing letters,
-   numbers, or the symbols -, _, +, \*, or / and not being a keyword.
+   numbers, or the symbols -, _, or . and not being a keyword.
 
 
