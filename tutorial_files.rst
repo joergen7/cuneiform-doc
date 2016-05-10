@@ -88,6 +88,7 @@ file with a given content.
 Example e-2.2::
         
     deftask to-file( out( File ) : content )in bash *{
+      out=out.txt
       echo $content > $out
     }*
     
@@ -101,8 +102,7 @@ this::
         
         
     > to-file( content: "Hello world" ); 
-    INFO  Query 73f90ac7-8707-4e60-847c-37376a1bc9b4 started.
-    INFO  Query 73f90ac7-8707-4e60-847c-37376a1bc9b4 finished: '5532951210_1_out'
+    "4_out.txt"
     
 .. hint::
    You find the output files produced by Cuneiform in the repo directory of the
@@ -140,6 +140,7 @@ consuming task unaltered, we enclose the input parameter with angle brackets
 Example e-2.4::
 
     deftask cat( out( File ) : <file( File )> )in bash *{
+      out=out.txt
       cat ${file[@]} > $out
     }*
     
@@ -168,8 +169,8 @@ output parameter in angle brackets `<>`.
 Example e-2.5::
 	
     deftask split4( <out( File )> : file( File ) )in bash *{
-      split -d -l 4 -a 6 $file out
-      out=out*
+      split -d -l 4 -a 6 $file out.
+      out=out.*
     }*
     
     file = cat( file: to-file( content: 1 2 3 4 5 6 7 8 ) );
@@ -232,16 +233,18 @@ Solution a-2.3
 ::
 	
     deftask to-file( out( File ) : content )in bash *{
+      out=out.txt
       echo $content > $out
     }*
 
     deftask cat( out( File ) : <file( File )> )in bash *{
+      out=out.txt
       cat ${file[@]} > $out
     }*
 
     deftask split( <out( File )> : file( File ) )in bash *{
-      split -d -l 1 -a 6 $file out
-      out=out*
+      split -d -l 1 -a 6 $file out.
+      out=out.*
     }*
 
     deftask wc( n : file( File ) )in bash *{

@@ -70,10 +70,10 @@ along with introducing a basic kind of expression: the literal.
 To reproduce the examples below, start the Cuneiform interactive shell by
 entering on the command line::
 
-    cuneiform -i
+    cuneiform
   
 .. hint::
-   You can exit the Cuneiform interactive shell by entering ``quit;``.
+   You can exit the Cuneiform interactive shell by entering ``quit``.
    
 If you have not yet installed Cuneiform, please refer to the :ref:`setup`
 section.
@@ -118,28 +118,26 @@ Query can be any kind of expression terminated with a semicolon. To find out the
 value of the variable ``person`` we can query it.
 
 Example e-1.3::
-	
+
     person;
     
 Assuming you have also entered Example e-1.2, you should get an output like this
 on the Cuneiform interactive shell::
-	
+
     > person;
-    INFO  Query 3394b425-7b94-472d-a3c6-0509f3fffda5 started.
-    INFO  Query 3394b425-7b94-472d-a3c6-0509f3fffda5 finished: 'Peter'
+    "Peter"
 
 Some queries are special in the sense, that they do not trigger a computation
-but a side effect. We have already encountered one such special query: ``quit;``
-which exits the shell. Another important special query is ``state;`` which
+but a side effect. We have already encountered one such special query: ``quit``
+which exits the shell. Another important special query is ``state`` which
 prints out all variable bindings which the shell has collected so far. Assuming
 you entered Examples e-1.1 and e-1.2, you should get something like this on
 entering ``state;``
 
 Example e-1.4::
 	
-    > state;
-    x = '5';
-    person = 'Peter';
+    > state
+    #{"person" => [{str,"Peter"}],"x" => [{str,"5"}]}
     
 Task Definition and Application
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -190,10 +188,9 @@ In this :ref:`syntax_app` we have bound the input variable ``a`` to the integer
 literal ``1`` and the input variable ``b`` to the integer literal ``2``.
 Assuming you have entered Examples e-1.5 and e-1.6 you should get an output like
 this::
-	
+
     > add( a: 1, b: 2 );
-    INFO  Query e2d93732-1488-4be3-83af-f5e959c9681b started.
-    INFO  Query e2d93732-1488-4be3-83af-f5e959c9681b finished: '3'
+    "3"
     
 Let's look at another example for a Task Definition. This time, we want to
 concatenate two strings. We choose to perform this operation in R.
