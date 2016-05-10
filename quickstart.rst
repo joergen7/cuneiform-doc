@@ -109,8 +109,7 @@ terminal::
     
 The output should look something like this::
 	
-    INFO  Query 633aeb81-3885-4203-b813-acd6e33a01b2 started.
-    INFO  Query 633aeb81-3885-4203-b813-acd6e33a01b2 finished: 'Hello Peter' 'Hello Robert'
+    "Hello Peter" "Hello Robert"
 
     
     

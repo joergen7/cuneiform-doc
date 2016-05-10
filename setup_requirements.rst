@@ -16,7 +16,6 @@ Supported Operating Systems:
     Windows is currently not supported by Cuneiform. The reason is that Cuneiform
     relies on a Posix-like environment.
  
-Additionally, Cuneiform requires Java SE 1.7 or higher. You can check your Java
-version by entering::
+Additionally, Cuneiform requires Erlang emulator version 7.0 (OTP 18.0)  or higher. You can check your Erlang version by entering::
 	
-    java -version
+    erl -version
