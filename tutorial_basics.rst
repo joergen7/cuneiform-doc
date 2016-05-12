@@ -274,12 +274,7 @@ Given the following state::
     x = 5;
     y = x;
     
-On updating the variable ``x = 6;`` the variable ``y`` implicitly also changes
-its value. That is because the variable ``y`` does not hold the literal value
-and is, therefore, independent from ``x`` but is a placeholder for the
-expression ``x`` and will evaluate to whatever ``x`` is. In this Cuneiform's
-Call-By-Name evaluation strategy differs from most general purpose programming
-language which use a Call-By-Value evaluation strategy.
+On updating the variable ``x = 6;`` the variable ``y`` implicitly also changes its value. That is because the variable ``y`` does not hold a literal value but is a placeholder for the expression ``x``. Hence, it will always evaluate to whatever ``x`` is. In this Cuneiform's Call-By-Name evaluation strategy differs from most general purpose programming language which use a Call-By-Value evaluation strategy.
 
 
 
