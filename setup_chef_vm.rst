@@ -55,6 +55,7 @@ repository by opening a command line terminal and entering::
 Change into the cloned directory and have Chef create a VM by entering::
 	
     cd chef-cuneiform
+    berks install
     kitchen converge
     
 The process of setting up the VM may take a few minutes depending on your

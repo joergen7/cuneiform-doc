@@ -53,11 +53,16 @@ Clone into the cookbooks directory the
 entering::
 	
     git clone https://github.com/joergen7/chef-cuneiform.git
+
+Now that we have the Cuneiform cookbook installed, we need to install all dependent cookbooks. This can be done with the *berks* command::
+
+    cd chef-cuneiform
+    berks vendor ..
     
-Now enter the directory just above the *cookbooks* directory and run the Chef
+Eventually, enter the directory just above the *cookbooks* directory and run the Chef
 client::
 	
-    cd ..
+    cd ../..
     sudo chef-client -z -r "chef-cuneiform::default"
 
 .. attention::
