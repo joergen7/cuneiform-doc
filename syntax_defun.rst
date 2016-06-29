@@ -60,13 +60,15 @@ A task definition in Bash extracting a tar archive::
     }*
 
 A task in Bash gunzipping a compressed file::
-	
+
     deftask gunzip( out( File ) : gz( File ) )in bash *{
+      out=unzipped_${gz%.gz}
       gzip -c -d $gz > $out
     }*
 
 A task in Bash concatenating a list of files::
-	
+
     deftask cat( out( File ) : <file( File )> )in bash *{
+      out=out.txt
       cat ${file[@]} > $out
     }*
