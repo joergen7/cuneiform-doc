@@ -35,9 +35,7 @@ to a Compound Expression consisting of three string literals::
 	
     greet( person: "Jenny" "Peter" "John" )
         
-An Application of the tasks ``bowtie2-align`` and ``bwa-align`` binding
-their two input parameters ``idx`` and ``fastq``::
+An Application of the task ``bowtie2-align`` binding its two input parameters ``idx`` and ``fastq``::
 	
-    apply( task:  bowtie2-align bwa-align,
-           idx:   bowtie2-idx bwa-idx,
-           fastq: fastq )
+    bowtie2-align( idx:   bowtie2-idx bwa-idx,
+                   fastq: fastq )
