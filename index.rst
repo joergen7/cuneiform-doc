@@ -23,7 +23,6 @@ The sources for this documentation are available on
    tutorial
    syntax
    semantics
-   Manual: cf <http://cuneiform-lang.org/man/cf/index.html>
-   Manual: cre <http://cuneiform-lang.org/man/cre/index.html>
    Manual: effi <http://cuneiform-lang.org/man/effi/index.html>
+   Manual: gen_pnet <http://cuneiform-lang.org/man/gen_pnet/index.html>
 
