@@ -24,10 +24,12 @@ To compile Cuneiform from its source you need to install the following packages:
 
 - git
 - erlang
+- make
+- rlwrap
 
 To do so, enter in a command line terminal::
 	
-    sudo apt-get install git erlang
+    sudo apt-get install git erlang make rlwrap
 
 Make sure that you are running an Erlang emulater version 7.0 (OTP 18.0) or higher. You can check your Erlang version by entering::
 
