@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-`cuneiform-lang.org <http://www.cuneiform-lang.org>`_
+`cuneiform-lang.org <https://www.cuneiform-lang.org>`_
 
 Cuneiform Documentation
 =======================
