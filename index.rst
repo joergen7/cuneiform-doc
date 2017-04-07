@@ -23,6 +23,7 @@ The sources for this documentation are available on
    tutorial
    syntax
    semantics
-   Manual: effi <http://cuneiform-lang.org/man/effi/index.html>
-   Manual: gen_pnet <http://cuneiform-lang.org/man/gen_pnet/index.html>
+   Manual: effi <https://cuneiform-lang.org/man/effi/index.html>
+   Manual: gen_pnet <https://cuneiform-lang.org/man/gen_pnet/index.html>
+   Manual: lib_combin <https://cuneiform-lang.org/man/lib_combin/index.html>
 
