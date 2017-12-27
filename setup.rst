@@ -23,4 +23,4 @@ which are documented here.
    setup_compile
    setup_chef_local
    setup_chef_vm
-   setup_inmem	 
+   setup_inmem
