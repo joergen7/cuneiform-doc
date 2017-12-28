@@ -1,2 +1,4 @@
-Common Runtime Environment
-==========================
+.. _cre:
+
+Common Runtime Environment (cre)
+================================

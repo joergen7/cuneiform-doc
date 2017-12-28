@@ -22,9 +22,6 @@ The sources for this documentation are available on
    setup
    tutorial
    syntax
-   Manual: effi <https://cuneiform-lang.org/man/effi/index.html>
-   Manual: gen_pnet <https://cuneiform-lang.org/man/gen_pnet/index.html>
-   Manual: lib_combin <https://cuneiform-lang.org/man/lib_combin/index.html>
    cre
    cf_worker
-   cf_client
+   effi

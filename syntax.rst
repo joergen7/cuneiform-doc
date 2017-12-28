@@ -1,5 +1,5 @@
-Cuneiform Syntax
-================
+Cuneiform Syntax Reference
+==========================
 
 This section gives a formal definition of the Cuneiform syntax. The entry point
 of a Cuneiform program is the :ref:`syntax_script`.

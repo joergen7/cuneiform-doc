@@ -9,8 +9,10 @@
 
 - [Sphinx](http://www.sphinx-doc.org/)
 
-    sudo apt-get install python-pip
-    pip install sphinx sphinx-rtd-theme
+```bash
+sudo apt-get install python-pip
+pip install sphinx sphinx-rtd-theme
+```
 
 ## Authors
 
