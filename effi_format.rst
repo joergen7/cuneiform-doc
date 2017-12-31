@@ -113,5 +113,7 @@ The reply format is what effi produces.
 .. code-block:: none
 
   Result ::= { "status": "ok", "output": S, "ret_bind_lst": [Bind, ...] }
-           | { "status": "error", "output": S }
+           | { "status": "error", "stage": "run", "output": S }
+           | { "status": "error", "stage": "precond", [S, ...]}
+           | { "status": "error", "stage": "postcond", [S, ...]}
 
