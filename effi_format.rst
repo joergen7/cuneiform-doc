@@ -104,16 +104,15 @@ The reply format is what effi produces.
 
 .. code-block:: none
 
-  Reply ::= { "app_id":          S,
-              "extended_script": S,
-              "stat":            { "t_start": S, "duration": S },
-              "result":          Result }
+  Reply ::= { "app_id": S,
+              "stat":   { "t_start": S, "duration": S },
+              "result": Result }
 
 
 .. code-block:: none
 
-  Result ::= { "status": "ok", "output": S, "ret_bind_lst": [Bind, ...] }
-           | { "status": "error", "stage": "run", "output": S }
-           | { "status": "error", "stage": "precond", [S, ...]}
-           | { "status": "error", "stage": "postcond", [S, ...]}
+  Result ::= { "status": "ok", "ret_bind_lst": [Bind, ...] }
+           | { "status": "error", "stage": "run", "extended_script": S, "output": S }
+           | { "status": "error", "stage": "precond", file_lst: [S, ...] }
+           | { "status": "error", "stage": "postcond", file_lst: [S, ...] }
 
