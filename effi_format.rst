@@ -24,8 +24,6 @@ Example
 .. code-block:: json
 
   { "app_id":          "1234",
-    "extended_script": "...",
-    "output":          "...",
     "stat":            { "tstart":   "...",
                          "duration": "..." },
     "result":          { "status":   "ok",
