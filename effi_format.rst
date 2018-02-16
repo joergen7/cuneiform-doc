@@ -111,6 +111,6 @@ The reply format is what effi produces.
 
   Result ::= { "status": "ok", "ret_bind_lst": [Bind, ...] }
            | { "status": "error", "stage": "run", "extended_script": S, "output": S }
-           | { "status": "error", "stage": "precond", file_lst: [S, ...] }
-           | { "status": "error", "stage": "postcond", file_lst: [S, ...] }
+           | { "status": "error", "stage": "stagein", file_lst: [S, ...] }
+           | { "status": "error", "stage": "stageout", file_lst: [S, ...] }
 
