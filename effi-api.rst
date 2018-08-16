@@ -1,7 +1,9 @@
 Erlang API
 ==========
 
-Effi can be driven from an Erlang API by using the function ``effi:handle_request/2``. Given an Erlang hash map using atoms as keys and binaries as values bound in the variable ``EffiRequest`` you can start effi by entering::
+Effi can be driven from an Erlang API by using the function ``effi:handle_request/2``. Given an Erlang hash map using atoms as keys and binaries as values bound in the variable ``EffiRequest`` you can start effi by entering
+
+.. code-block:: erlang
 
     EffiRequest = #{ ... }.
     Dir = "./".

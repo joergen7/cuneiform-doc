@@ -1,5 +1,5 @@
-Erlang Foreign Function Interface (effi)
-========================================
+Foreign Function Interface (effi)
+=================================
 
 The Erlang foreign function interface (Effi) is a way to run code in arbitrary foreign languages, e.g., Python or Octave from a native (Erlang) environment.
 
@@ -10,9 +10,9 @@ The foreign code snippet along with input variable bindings is given to effi in 
 .. toctree::
    :maxdepth: 2
 
-   effi_supported_languages
-   effi_integration
-   effi_synopsis
-   effi_api
-   effi_format
-   effi_requirements
+   effi-languages
+   effi-integration
+   effi-synopsis
+   effi-api
+   effi-format
+   effi-requirements

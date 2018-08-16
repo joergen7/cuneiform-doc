@@ -1,4 +1,4 @@
 .. _cre:
 
-Common Runtime Environment (cre)
-================================
+Distributed Runtime (cre)
+=========================

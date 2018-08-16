@@ -9,47 +9,87 @@ All syntax diagrams have been generated using the
 
 Complete Cuneiform syntax in EBNF::
 
-    script       ::= stat*
+    script       ::= statement+
 
-    stat         ::= query
-                   | assign
-                   | defun
-                   
-    query        ::= compoundexpr ';'
+    statement    ::= import
+                   | define
+                   | e ';'
 
-    defun        ::= 'deftask' ID sign( '{' assign+ '}'
-                                      | 'in' lang '*{' BODY '}*' )
-    
-    sign         ::= '(' param+ ':' inparam* ')'
-    
-    inparam      ::= param
-                   | '[' name+ ']'
-    
-    param        ::= name
-                   | '<' name '>'
-                   
-    name         ::= ID( '(' 'String' ')' | '(' 'File' ')' )?
+    import       ::= 'import' "'...'" ';'
 
-    assign       ::= ID+ '=' compoundexpr ';'
+    define       ::= let-define
+                   | fun-define
+
+    let-define   ::= 'let' pattern '=' e ';'
+
+    fun-define   ::= 'def' id '(' (id ':' type (',' id ':' type)* )? ')' '->' type
+                     ( 'in' lang '*{ ... }*' | '{' define* e '}' )
+
+    pattern      ::= id ':' type
+                   | '<' id '=' pattern (',' id '=' pattern)* '>'
+
+    lang         ::= 'Bash'
+                   | 'Erlang'
+                   | 'Java'
+                   | 'Matlab'
+                   | 'Octave'
+                   | 'Perl'
+                   | 'Python'
+                   | 'R'
+                   | 'Racket'
+
+    type         ::= 'Str'
+                   | 'File'
+                   | 'Bool'
+                   | fun-type
+                   | list-type
+                   | record-type
+
+
+    fun-type     ::= ('Ntv' | 'Frn') '(' (id ':' type)* ')' '->' type
+
+    list-type    ::= '[' type ']'
+
+    record-type  ::= '<' id ':' type (',' id ':' type)* '>'
+
+    e            ::= id
+                   | id '(' id '=' e (',' id '=' e)* ')'
+                   | '"..."'
+                   | "'...'"
+                   | boolean-e
+                   | cond-e
+                   | list-e
+                   | for-e
+                   | fold-e
+                   | record-e
+                   | proj-e
+                   | error-e
+
+    boolean-e    ::= 'true'
+                   | 'false'
+                   | '(' e '==' e ')'
+                   | 'not' e
+                   | '(' e 'and' e ')'
+                   | '(' e 'or' e ')'
+                   | 'isnil' e
+
+    cond-e       ::= 'if' e 'then' define* e 'else' define* e 'end'
+
+    list-e       ::= '[' (e (',' e)*)? ':' type ']'
+                   | '(' e '>>' e ')'
+                   | '(' e '+' e ')'
+
+    for-e        ::= 'for' id ':' type '<-' e (',' id ':' type '<-' e)* do define* e ':' type 'end'
+
+    fold-e       ::= 'fold' id ':' type '=' e ',' id ':' type '<-' e do define* e 'end'
+
+    record-e     ::= '<' id '=' e (',' id '=' e)* '>'
+
+    proj-e       ::= '(' e '|' id ')'
+
+    error-e      ::= 'error' '"..."' ':' type
     
-    lang         ::= 'bash' | 'lisp' | 'matlab' | 'octave' | 'perl' | 'python'
-                   | 'r' | 'java' | 'scala'   
-    
-    compoundexpr ::= 'nil'
-                   | expr+
-    
-    expr         ::= ID
-                   | INTLIT
-                   | '"' STRLIT '"'
-                   | cnd
-                   | app
-                   
-    cnd          ::= 'if' compoundexpr 'then' compoundexpr 'else' compoundexpr 'end'
-    
-    app          ::= ID '(' ( binding ( ',' binding )* )? ')'
-                   
-    binding      ::= ID ':' compoundexpr
-    
+
 .. toctree::
    :maxdepth: 1
 
