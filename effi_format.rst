@@ -81,9 +81,14 @@ The `lang` pair provides the programming language in which the script is written
 .. code-block:: none
 
     Lang ::= "Bash"
+           | "Erlang"
+           | "Java"
            | "Matlab"
            | "Octave"
+           | "Perl"
            | "Python"
+           | "R"
+           | "Racket"
 
 A lambda expression contains a list of argument bindings `Bind` of the following form:
 

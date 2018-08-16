@@ -1,7 +1,7 @@
 Cuneiform Worker (cf_worker)
 ============================
 
-This section describes the Cuneiform worker application (cf_worker).
+cf_worker is a worker implementation for the common runtime environment (CRE). The worker uses the Erlang foreign function interface (Effi) to execute tasks and interacts with the (distributed) filesystem via a Posix interface.
 
 .. toctree::
    :maxdepth: 2
