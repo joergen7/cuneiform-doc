@@ -46,7 +46,7 @@ Complete Cuneiform syntax in EBNF::
                    | record-type
 
 
-    fun-type     ::= ('Ntv' | 'Frn') '(' (id ':' type (',' id ':' type)*)? ')' '->' type
+    fun-type     ::= ('Ntv' | 'Frn') '(' (id ':' type (',' id ':' type)* )? ')' '->' type
 
     list-type    ::= '[' type ']'
 

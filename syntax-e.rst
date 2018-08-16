@@ -42,10 +42,11 @@ Appears in:
 
 - :ref:`syntax-e`
 
+
 .. _syntax-boolean-e:
 
-Boolean Expressions
--------------------
+Boolean
+-------
 
 **boolean-e:**
 
@@ -59,3 +60,78 @@ Appears in:
 
 - :ref:`syntax-e`
 
+
+.. _syntax-cond-e:
+
+Conditional
+-----------
+
+**cond-e:**
+
+.. image:: img/cond-e.png
+
+Uses:
+
+- :ref:`syntax-define`
+- :ref:`syntax-e`
+
+Appears in:
+
+- :ref:`syntax-e`
+
+.. _syntax-list-e:
+
+List
+----
+
+**list-e:**
+
+.. image:: img/list-e.png
+
+Uses:
+
+- :ref:`syntax-e`
+- :ref:`syntax-type`
+
+Appears in:
+
+- :ref:`syntax-e`
+
+
+.. _syntax-for-e:
+
+For Iteration
+-------------
+
+**for-e:**
+
+.. image:: img/for-e.png
+
+Uses:
+
+- :ref:`syntax-define`
+- :ref:`syntax-e`
+- :ref:`syntax-type`
+
+Appears in:
+
+- :ref:`syntax-e`
+
+.. _syntax-fold-e:
+
+Fold Iteration
+--------------
+
+**fold-e:**
+
+.. image:: img/fold-e.png
+
+Uses:
+
+- :ref:`syntax-define`
+- :ref:`syntax-e`
+- :ref:`syntax-type`
+
+Appears in:
+
+- :ref:`syntax-e`
