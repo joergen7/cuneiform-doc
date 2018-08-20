@@ -3,11 +3,15 @@ Command Line Synopsis
 
 Compiling the Cuneiform client using ``escriptize`` creates an Erlang script file ``cf_worker`` which allows starting the Cuneiform client via the command line.
 
-To display a help text enter::
+To display a help text enter
+
+.. code-block:: none
 
     ./cf_worker --help
 
-This will show the command line synopsis, which looks like the following: ::
+This will show the command line synopsis, which looks like the following:
+
+.. code-block:: none
 
     Usage: cf_worker [-v] [-h] [-s <suppl_file>] [-c <cre_node>] [-n <n_wrk>]
                      [-w <wrk_dir>] [-r <repo_dir>] [-d <data_dir>]
@@ -25,7 +29,9 @@ This will show the command line synopsis, which looks like the following: ::
       -d, --data_dir    Data directory where input data is located.
 
 
-To start the worker application from the command line and connect with a running CRE instance enter::
+To start the worker application from the command line and connect with a running CRE instance enter
+
+.. code-block:: none
 
     ./cf_worker -c cre@my_node
 

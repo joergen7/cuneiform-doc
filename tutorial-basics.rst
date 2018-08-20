@@ -4,12 +4,7 @@ Cuneiform Basics
 ================
 
 Learning Objective
-  This tutorial introduces you to fundamental Cuneiform language concepts.
-  You will use the Cuneiform interactive shell, to define tasks, 
-  assign variables and query your workflow. These concepts are illustrated with
-  simple examples showing string manipulation and arithmetic operations.
-  Furthermore, you  will familiarize yourself with Cuneiform's Call-By-Name
-  evaluation strategy.
+  This tutorial introduces you to the basic Cuneiform language concepts. You use the Cuneiform interactive shell, to define foreign functions, bind variables and perform computations. We illustrate these concepts with simple examples showing string manipulation and arithmetic operations. Furthermore, you familiarize yourself with Cuneiform's Call-by-Name evaluation strategy.
       
 Difficulty
   Basic
@@ -25,14 +20,7 @@ Prerequisites
 Introduction
 ------------
 
-This tutorial is an introduction to the most important concepts of Cuneiform
-which you will need to use in all but the most simplistic scenarios. This is
-assigning expressions to variables, querying, and defining tasks. In later
-tutorials when more specialized language concepts are introduced it is important
-for you to be familiar with the basic concepts covered in this tutorial. These
-basic concepts lets you specify arbitrarily complex workflows driving APIs from
-Perl, R, Python, and Bash. After this tutorial will be able to define tasks,
-apply tasks, assign variables and query the value of an expression.
+This tutorial is an introduction to the most important concepts of Cuneiform. This is binding an expression to a variable and defining and calling foreign functions. Completing this tutorial, enables you to specify complex workflows and drive APIs in foreign languages like Perl, R, Python, and Bash.
       
 Explanation and Examples
 ------------------------
@@ -41,34 +29,26 @@ Statements
 ^^^^^^^^^^
 
 Statements are the building blocks of a Cuneiform
-:ref:`syntax_script`. There are 3 kinds of Statements: (i) Assignments, (ii)
-Queries, and (iii) Task Definitions. This section is supposed to give you a
-quick overview about the 3 :ref:`syntax_stat` types:
+:ref:`syntax-script`. In addition to import-statements, there are 2 kinds of Statements: (i) definition-statements like variable bindings or function definitions and (ii) query-statements, performing computation. This section gives a quick overview about statements:
 
-:ref:`syntax_assign`
-    Assignments bind expressions to variables.
+:ref:`syntax-let-define`
+    Let-definitions bind expressions to variables.
 
-:ref:`syntax_query`
-    Queries tell the interpreter which values you are interested in. Only
-    computation steps actually contributing to these values are executed.
+:ref:`syntax-fun-define`
+    Function-definitions introduce functions.
 
-:ref:`syntax_defun`
-    Task Definitions are much like function definitions.
+:ref:`syntax-query`
+    Queries tell the interpreter which values you are interested in. Only computation steps actually contributing to are query are executed.
 
-Unless specifying very simplistic workflows, we have to use of each kind of
-Statement.
 
-Assignments
-^^^^^^^^^^^
+Unless specifying very simple workflows, we have to use these statements.
 
-Assignments are used to assign an expression to a
-variable. Variables can be used to hold workflow outputs which can later be
-queried (see `Queries`_) or to hold intermediate results to be reused in other
-parts of a workflow. This section is supposed to show you how to use assignments
-along with introducing a basic kind of expression: the literal.
+Let Definitions
+^^^^^^^^^^^^^^^
 
-To reproduce the examples below, start the Cuneiform interactive shell by
-entering on the command line::
+Let definitions are used to bind an expression to a variable. Variables are placeholders for expressions which can be queried (see `Queries`_) or for intermediate results to be referenced in other parts of a script. Here we show how to use let definitions to bind literal expressions to a variable.
+
+First, start the Cuneiform interactive shell by entering on the command line::
 
     cuneiform
   
@@ -78,22 +58,20 @@ entering on the command line::
 If you have not yet installed Cuneiform, please refer to the :ref:`setup`
 section.
   
-An Assignment binds an expression to a variable. Where the variable name appears
-on the left-hand side of an equals symbol while the expression to be bound
-appears on the right-hand side.
+A let definition binds an expression to a variable. The statement is started by the ``let`` keyword and the variable name and its type appear on the left-hand side of an equals symbol while the expression to be bound appears on the right-hand side.
 
 Example e-1.1::
 	
-    x = 5;
+    let x : Str = "5";
     
-In this example we have bound the integer literal ``5`` to the variable ``x``.
+In this example we have bound the string literal ``"5"`` to the variable ``x``.
 Let's look at another example.
 
 Example e-1.2::
 
-    person = "Peter";
+    let person : Str = "Peter";
     
-Here, the expression is the string literal ``"Peter"`` while the variable is
+Here, the expression is the string literal ``"Peter"`` and the bound variable is
 ``person``. An assignment declares to the Cuneiform interpreter that whenever it
 sees a variable like ``x`` or ``person`` the interpreter should shellace that
 variable with whatever expression is bound to it. You will see later, that it is

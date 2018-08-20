@@ -9,6 +9,9 @@ Type
 
 Uses:
 
+- :ref:`syntax-str-type`
+- :ref:`syntax-file-type`
+- :ref:`syntax-bool-type`
 - :ref:`syntax-fun-type`
 - :ref:`syntax-list-type`
 - :ref:`syntax-record-type`
@@ -23,6 +26,50 @@ Appears in:
 - :ref:`syntax-fun-type`
 - :ref:`syntax-list-type`
 - :ref:`syntax-record-type`
+
+.. _syntax-str-type:
+
+String Type
+-----------
+
+**str-type:**
+
+.. image:: img/str-type.png
+
+Appears in:
+
+- :ref:`syntax-type`
+
+
+
+.. _syntax-file-type:
+
+File Type
+---------
+
+**file-type:**
+
+.. image:: img/file-type.png
+
+Appears in:
+
+- :ref:`syntax-type`
+
+
+
+.. _syntax-bool-type:
+
+Boolean Type
+------------
+
+**bool-type:**
+
+.. image:: img/bool-type.png
+
+Appears in:
+
+- :ref:`syntax-type`
+
 
 
 .. _syntax-fun-type:

@@ -13,8 +13,42 @@ Uses:
 
 - :ref:`syntax-import`
 - :ref:`syntax-define`
-- :ref:`syntax-e`
+- :ref:`syntax-query`
 
 Appears in:
 
 - :ref:`syntax-script`
+
+
+.. _syntax-import:
+
+Import
+------
+
+An import-statement allows to reference definitions from a different Cuneiform source file.
+
+**import:**
+
+.. image:: img/import.png
+
+Appears in:
+
+- :ref:`syntax-statement`
+
+
+.. _syntax-query:
+
+Query
+-----
+
+**query:**
+
+.. image:: img/query.png
+
+Uses:
+
+- :ref:`syntax-e`
+
+Appears in:
+
+- :ref:`syntax-statement`

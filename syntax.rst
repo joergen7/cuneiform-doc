@@ -13,7 +13,9 @@ Complete Cuneiform syntax in EBNF::
 
     statement    ::= import
                    | define
-                   | e ';'
+                   | query
+
+    query        ::= e ';'
 
     import       ::= 'import' "'...'" ';'
 
@@ -22,8 +24,8 @@ Complete Cuneiform syntax in EBNF::
 
     let-define   ::= 'let' pattern '=' e ';'
 
-    fun-define   ::= 'def' id '(' (id ':' type (',' id ':' type)* )? ')' '->' type
-                     ( 'in' lang '*{ ... }*' | '{' define* e '}' )
+    fun-define   ::= 'def' id '(' (id ':' type (',' id ':' type)* )? ')'
+                     '->' type ( 'in' lang '*{ ... }*' | '{' define* e '}' )
 
     pattern      ::= id ':' type
                    | '<' id '=' pattern (',' id '=' pattern)* '>'
@@ -38,25 +40,31 @@ Complete Cuneiform syntax in EBNF::
                    | 'R'
                    | 'Racket'
 
-    type         ::= 'Str'
-                   | 'File'
-                   | 'Bool'
+    type         ::= str-type
+                   | file-type
+                   | bool-type
                    | fun-type
                    | list-type
                    | record-type
 
+    str-type     ::= 'Str'
 
-    fun-type     ::= ('Ntv' | 'Frn') '(' (id ':' type (',' id ':' type)* )? ')' '->' type
+    file-type    ::= 'File'
+
+    bool-type    ::= 'Bool'
+
+    fun-type     ::= ('Ntv' | 'Frn') '(' (id ':' type (',' id ':' type)* )? ')'
+                     '->' type
 
     list-type    ::= '[' type ']'
 
     record-type  ::= '<' id ':' type (',' id ':' type)* '>'
 
-    e            ::= id
-                   | '"..."'
-                   | "'...'"
+    e            ::= var-e
+                   | str-e
+                   | file-e
                    | app-e
-                   | boolean-e
+                   | bool-e
                    | cond-e
                    | list-e
                    | for-e
@@ -66,9 +74,16 @@ Complete Cuneiform syntax in EBNF::
                    | error-e
 
 
+    var-e        ::= id
+
+    str-e        ::= '"..."'
+
+    file-e       ::= "'...'"
+
+
     app-e        ::= id '(' id '=' e (',' id '=' e)* ')'
 
-    boolean-e    ::= 'true'
+    bool-e       ::= 'true'
                    | 'false'
                    | '(' e '==' e ')'
                    | 'not' e
@@ -82,9 +97,11 @@ Complete Cuneiform syntax in EBNF::
                    | '(' e '>>' e ')'
                    | '(' e '+' e ')'
 
-    for-e        ::= 'for' id ':' type '<-' e (',' id ':' type '<-' e)* do define* e ':' type 'end'
+    for-e        ::= 'for' id ':' type '<-' e (',' id ':' type '<-' e)*
+                     'do' define* e ':' type 'end'
 
-    fold-e       ::= 'fold' id ':' type '=' e ',' id ':' type '<-' e do define* e 'end'
+    fold-e       ::= 'fold' id ':' type '=' e ',' id ':' type '<-' e
+                      'do' define* e 'end'
 
     record-e     ::= '<' id '=' e (',' id '=' e)* '>'
 
@@ -98,7 +115,6 @@ Complete Cuneiform syntax in EBNF::
 
    syntax-script
    syntax-statement
-   syntax-import
    syntax-define
    syntax-e
    syntax-type
