@@ -2,9 +2,7 @@ Files and Lists
 ===============
 
 Learning Objective
-  This tutorial teaches you how to use Cuneiform's type system and how to use
-  files. Additionally, it introduces lists and it is shown how to map and
-  aggregate over lists and how to return lists from tasks.
+  This tutorial deepens your understanding of Cuneiform's type system and how to use files.
   
   
 Difficulty
@@ -20,44 +18,18 @@ Prerequisites
 Introduction
 ------------
 
-This tutorial is about handling files and lists of files in Cuneiform. Files are
-a common method for scientific tools and libraries to exchange data.
-Furthermore, by partitioning files and applying tasks independently for each
-partition we achieve data parallelism. You learn about the type `File` and
-how to define tasks consuming and producing files. Furthermore, you learn about
-lists and how to map over and aggregate them.
+This tutorial is about handling files in Cuneiform. Files are a common way for scientific tools and libraries to exchange data. Cuneiform distinguishes filenames from strings (or Booleans) by associating filenames with a distinct type ``File``.
 
 
 Explanation and Examples
 ------------------------
 
-Cuneiform is a workflow language with a black-box data model. I.e., Cuneiform
-has no data model for the data exchanged among tasks. Tasks can produce data in
-the form of files with arbitrary content. The advantage of this black-box data
-model is that a large amount of tools can be interfaced ad-hoc because reading
-and writing files is a common way to exchange data in many scientific areas. It
-has, however, the disadvantage that the Cuneiform interpreter can make no
-consistency checks on the data produced by a tool apart from checking whether a
-file has actually been created. Additionally, there is no generic way to
-partition data. Thus, data partitioning, if desired, has to be introduced
-explicitly in the workflow.
-
-Cuneiform is a workflow language designed for data parallelism. I.e., applying a
-tool to a single large file producing another large file which is input to the
-next tool is not the preferred mode of operation. A better way is to apply a
-tool to each element in a list of small files and run all applications in
-parallel.
-
-The way lists are decomposed prior to applying a task is defined in the task
-signature. In general, any argument in a task application can be a list. In this
-tutorial we consider three basic use cases of lists: (i) mapping a task to each
-element of a list, (ii) consuming a list as a whole, (iii) defining a task that
-returns a list.
+When it comes to files, Cuneiform has a black-box data model. I.e., Cuneiform has no knowledge about the data format of files. This has the advantage that Cuneiform foreign functions can exchange any kind of binary data format, e.g., compressed files. The disadvantage is that common operations like data partitioning cannot be performed implicitly, but need to be an explicit part of the program.
 
 Types
 ^^^^^
 
-In the :ref:`tutorial_basics` tutorial you have learned how to define and call
+In the :ref:`tutorial-basics` tutorial you have learned how to define and call
 tasks. You may have noted that neither the input parameters nor the outputs had
 any type information attached. In fact, there is a default type: `String`, which
 is assumed when no further type information is given. Our `add` task in
