@@ -93,7 +93,9 @@ It is possible to bind expressions that are more complex than string literals or
 Definition History
 ^^^^^^^^^^^^^^^^^^
 
-To get an overview over the variables bound so far you can use the ``hist`` command.::
+To get an overview over the variables bound so far you can use the ``hist`` command.
+
+::
 	
     > hist
     let x : Str =
@@ -139,7 +141,9 @@ Example e-1.5::
 
     <a = "bloob", b = false>
 
-The above record associates the string ``"bloob"`` to the field ``a`` and the Boolean ``false`` to the field ``b``. Entering the expression as a query in the Cuneiform shell makes the shell echo the expression together with its type.::
+The above record associates the string ``"bloob"`` to the field ``a`` and the Boolean ``false`` to the field ``b``. Entering the expression as a query in the Cuneiform shell makes the shell echo the expression together with its type.
+
+::
 
     > <a = "bloob", b = false>;
     <a = "bloob", b = false>
@@ -156,7 +160,9 @@ Example e-1.6::
 
     ( r|a );
 
-Unlike many other languages, the parentheses around the infix projection operation are mandatory.::
+Unlike many other languages, the parentheses around the infix projection operation are mandatory.
+
+::
 
     > ( r|a );
     "bloob"
@@ -274,7 +280,7 @@ Given the following definitions::
     let x : Str = 5;
     let y : Str = x;
     
-On updating the variable ``let x : Str = 6;`` the variable ``y`` keeps its value because it refers to a different definition of ``x`` than the current one. This is called shadowing. It is impossible to taint old definitions by rebinding variables. The current ``x`` is a different variable than the ``x`` appearing in the definition of ``y``. Using the ``hist`` command shows all definitions in the order they were introduced. Shadowed definitions are also shown.
+On updating the variable ``let x : Str = 6;`` the variable ``y`` keeps its value because it refers to a different definition of ``x`` than the current one. This is called shadowing. It is impossible to taint old definitions by rebinding variables. Using the ``hist`` command shows all definitions in the order they were introduced. Shadowed definitions are also shown.
 
 
 
