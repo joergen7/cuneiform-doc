@@ -32,10 +32,10 @@ Statements are the building blocks of a Cuneiform
 :ref:`syntax-script`. In addition to import-statements, there are 2 kinds of Statements: (i) definition-statements like variable bindings or function definitions and (ii) query-statements, performing computation. This section gives a quick overview about statements:
 
 :ref:`syntax-let-define`
-    Let-definitions bind expressions to variables.
+    Let definitions bind expressions to variables.
 
 :ref:`syntax-fun-define`
-    Function-definitions introduce functions.
+    Function definitions introduce functions.
 
 :ref:`syntax-query`
     Queries tell the interpreter which values you are interested in. Only computation steps actually contributing to are query are executed.
@@ -72,30 +72,53 @@ Example e-1.2::
     let person : Str = "Peter";
     
 Here, the expression is the string literal ``"Peter"`` and the bound variable is
-``person``. An assignment declares to the Cuneiform interpreter that whenever it
-sees a variable like ``x`` or ``person`` the interpreter should shellace that
-variable with whatever expression is bound to it. You will see later, that it is
-possible to assign quite complex expressions. Nevertheless, an assignment never
-triggers any computation. It just binds an (unevaluated) expression to a
-variable. This is called a Call-By-Name evaluation strategy. In this, Cuneiform
-differs from most general purpose programming languages, which use a
-Call-By-Value evaluation strategy.
+``person``. A let statement tells the Cuneiform interpreter that whenever it
+sees a variable like ``x`` or ``person`` the interpreter should replace that
+variable with whatever expression is bound to it.
+
+Cuneiform's type system checks at compile-time, whether an expression matches the declared type. Also, it prevents the use of unbound variables. So, whenever you use a variable, you can be sure that it is bound and has the right type, otherwise the compiler will tell you upfront.
+
+This also means that order plays an important role: Since you can only use bound variables, a variable definition must precede its use. For example, the following pair of definitions is valid
+
+Example e-1.3::
+
+    let y : Bool = true;
+    let z : Bool = not y;
+
+However, introducing ``z`` before ``y`` would result in an error reporting that ``y`` is unbound.
+
+It is possible to bind expressions that are more complex than string literals or Boolean expressions. But no matter how complex, a binding never triggers computation. It just binds an (unevaluated) expression to a variable. The reason is the way Cuneiform implements the Call-By-Name evaluation strategy.
+
+
+Definition History
+^^^^^^^^^^^^^^^^^^
+
+To get an overview over the variables bound so far you can use the ``hist`` command.::
+	
+    > hist
+    let x : Str =
+      "5";
+
+    let person : Str =
+      "Peter";
+
+    let y : Bool =
+      true;
+
+    let z : Bool =
+      not y;
+
+The ``hist`` command is not really a part of the Cuneiform language. It is rather a special signal that the Cuneiform shell understands and handles separately. Another such command is ``quit`` which terminates the Cuneiform shell.
+
+Note that ``z`` is bound to the expression ``not y`` instead of ``false``. As we said earlier, let definitions do not trigger computations. So the expression ``not y`` is bound as is.
+
 
 Queries
 ^^^^^^^
 
-This section is about querying a Cuneiform workflow. While Assignments and 
-Task Definitions constitute the dependency graph of a workflow, they are in
-themselves just declarations describing a workflow. A query, on the other hand,
-defines the goal of a workflow. This section is supposed to show how a workflow
-is queried.
+Let- and function definitions bind expressions to variables but do not trigger any computation. In contrast, a query-statement tells the interpreter which of the previously defined expressions we want evaluated. Queries are the only kind of statement, that actually trigger a computation. A query has the form of an expression terminated with a semicolon. To find out the value of the variable ``person`` we can query it.
 
-In a query you tell the Cuneiform interpreter what value you are interested in.
-Queries are the only kind of Statement, that actually trigger a computation. A
-Query can be any kind of expression terminated with a semicolon. To find out the
-value of the variable ``person`` we can query it.
-
-Example e-1.3::
+Example e-1.4::
 
     person;
     
@@ -104,85 +127,92 @@ on the Cuneiform interactive shell::
 
     > person;
     "Peter"
+    : Str
 
-Some queries are special in the sense, that they do not trigger a computation
-but a side effect. We have already encountered one such special query: ``quit``
-which exits the shell. Another important special query is ``state`` which
-prints out all variable bindings which the shell has collected so far. Assuming
-you entered Examples e-1.1 and e-1.2, you should get something like this on
-entering ``state;``
 
-Example e-1.4::
-	
-    > state
-    #{"person" => [{str,"Peter"}],"x" => [{str,"5"}]}
-    
-Task Definition and Application
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Records and Record Types
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-This section is about tasks which take a prominent role in Cuneiform and are the
-equivalent to functions in general purpose programming languages. In Cuneiform,
-tasks can be in any foreign scripting language. This section is supposed to show
-how to define tasks and apply them.
-
-Cuneiform lets you define tasks. We call them tasks to emphasize their origin in
-scientific workflows but actually they are much like functions. They take a
-number of arguments and return an output value. You define and apply tasks in
-much the same way you would define and apply functions in any general purpose
-programming language.
-
-One strong point of Cuneiform is, that it is simple to define tasks in languages
-other than Cuneiform itself. This allows Cuneiform to be very simple (and, thus,
-easy to learn) while, at the same time, to tap the potential of all the
-supported foreign languages.
-
-Let's look at an example adding two numbers
-
-.. _e-1-5:
+Records are compound data structures that associate a name with an expression. C and Scheme users may know records as structs. In Cuneiform, records are constructed using angle brackets.
 
 Example e-1.5::
-	
-    deftask add( c : a b )in perl *{
-      $c = $a+$b;
-    }*
+
+    <a = "bloob", b = false>
+
+The above record associates the string ``"bloob"`` to the field ``a`` and the Boolean ``false`` to the field ``b``. Entering the expression as a query in the Cuneiform shell makes the shell echo the expression together with its type.::
+
+    > <a = "bloob", b = false>;
+    <a = "bloob", b = false>
+    : <a : Str, b : Bool>
+
+Record types also take the form of angle-bracketed lists, except that the field name is separated from the field's type with a colon ``:`` instead of an equal sign ``=``. So the type of the above record is ``<a : Str, b : Bool>``.
+
+We can access the fields of a record by using the projection operator ``|``.
+
+Example e-1.6::
+
+    let r : <a : Str, b : Bool> =
+      <a = "bloob", b = false>;
+
+    ( r|a );
+
+Unlike many other languages, the parentheses around the infix projection operation are mandatory.::
+
+    > ( r|a );
+    "bloob"
+    : Str
+
+    > ( r|b );
+    false
+    : Bool
+
     
-A Task Definition starts with the keyword ``deftask`` followed by the task name,
-which is here ``add``. Next is the :ref:`syntax_sign` declaring one output
-variable ``c`` and, separated by a ``:``, two input variables ``a`` and ``b``.
-Furthermore, we state that the task body will be written ``in perl``.
+Functions
+^^^^^^^^^
 
-.. hint::
-   It is possible to define tasks without any input parameters. In contrast, a
-   task must have at least one output parameter.
+This section is about functions. In Cuneiform, functions can be either native, which means that their evaluation is performed by the Cuneiform interpreter, or foreign, which means that their evaluation is performed by a worker. Foreign functions can be written in any one of the supported scripting languages, e.g., R or Python.
 
-The Perl part adds the values of ``a`` and ``b`` and stores the result in the
-variable ``c``. We can now apply this task like so
+Functions take a number of arguments and produce a return value. A function definition provides the function name, the names and types of all arguments, and the type of the return value. In the case of a foreign function, we also need to provide the name of the foreign language.
+
+The following example defines a function ``add`` with two arguments ``a`` and ``b`` which are both strings. The return value's type is a record with a single field ``c`` of type string. The foreign language is Perl.
+
+.. _e-1-6:
 
 Example e-1.6::
 	
-    add( a: 1, b: 2 );
+    def add( a : Str, b : Str ) -> <c : Str> in Perl *{
+      $c = $a+$b;
+    }*
     
-In this :ref:`syntax_app` we have bound the input variable ``a`` to the integer
-literal ``1`` and the input variable ``b`` to the integer literal ``2``.
-Assuming you have entered Examples e-1.5 and e-1.6 you should get an output like
-this::
+A function definition starts with the keyword ``def`` followed by the function name, which is here ``add``. Next is the function signature declaring two arguments ``a`` and ``b`` of type ``Str``. The return type is ``<c : Str>``.
 
-    > add( a: 1, b: 2 );
-    "3"
-    
-Let's look at another example for a Task Definition. This time, we want to
-concatenate two strings. We choose to perform this operation in R.
+The Perl part adds the values of ``a`` and ``b`` and stores the result in the variable ``c``.
+
+Foreign functions must always return a record. Each field of this record is associated with the value of a variable bound to the same name in the foreign language. 
+
+We can now apply this function like so
 
 Example e-1.7::
 	
-    deftask concat( c : a b )in r *{
+    add( a = "1", b = "2" );
+    
+This function application binds the argument ``a`` to the string literal ``"1"`` and argument ``b`` to the string literal ``"2"``::
+
+    > add( a = 1, b = 2 );
+    <c = "3">
+    : <c : Str>
+    
+Let's look at another example for a function definition. This time, we want to concatenate two strings. We choose to perform this operation in R.
+
+Example e-1.8::
+	
+    def concat( a : Str, b : Str ) -> <c : Str> in R *{
       c = paste( a, b )
     }*
 
-    concat( a: "Hello ", b: "world." );
+    concat( a = "Hello ", b = "world." );
     
-Applying ``concat`` to the string literals ``"Hello "`` and ``"world."``
-evaluates to the string literal ``"Hello world."``.
+Applying ``concat`` to the string literals ``"Hello "`` and ``"world."`` results in a record with a single field ``<c = "Hello world">``.
 
 
 Assignments
@@ -191,26 +221,18 @@ Assignments
 Assignment a-1.1
 ^^^^^^^^^^^^^^^^
 
-Define a Cuneiform task in Perl that takes one argument and computes the square
+Define a Cuneiform function in Perl that takes one argument and computes the square
 of that argument.
 
 Assignment a-1.2
 ^^^^^^^^^^^^^^^^
 
-How would a ``concat`` task look in Python or Bash?
-    
-.. hint::
-   You do not need to be an expert in Python or Bash to complete this task.
-   Googling "concatenate two strings in python" should give you something you
-   can pretty much copy and paste.
+How would a ``concat`` foreign function definition look in Python or Bash?
 
 Assignment a-1.3
 ^^^^^^^^^^^^^^^^
    
-Assuming you have assigned ``x = 5;`` assigning ``y = x;`` makes the
-variable ``y`` have the same value as ``x`` being ``5``. Will anything
-happen to the value of ``y`` if you update the value of ``x`` to, say,
-``6``? Explain your reasoning. Try it out in the Cuneiform interactive shell.
+Assuming you have defined ``let x : Str = "5";`` defining ``let y : Str = x;`` makes the variable ``y`` have the same value as ``x`` being ``"5"``. What happens to the binding of ``y`` if you update the value of ``x`` to, say, ``"6"``? Explain your reasoning. Use Cuneiform's interactive shell and its features.
     
    
 Solutions
@@ -221,38 +243,38 @@ Solution a-1.1
 
 ::
 
-    deftask square( b : a )in perl *{
+    def square( a : Str ) -> <b : Str> in Perl *{
       $b = $a*$a;
     }*
     
-    square( a: 5 );
+    square( a = 5 );
     
 Solution a-1.2
 ^^^^^^^^^^^^^^^^
 
 ::
 
-    deftask concat2( c : a b )in python *{
+    def concat2( a : Str, b : Str ) -> <c : Str> in Python *{
       c = a+b
     }*
     
-    deftask concat3( c : a b )in bash *{
+    def concat3( a : Str, b : Str ) -> <c : Str> in Bash *{
       c="$a$b"
     }*
     
-    concat2( a: "bla", b: "blub" );
-    concat3( a: "sha", b: "lala" );
+    concat2( a = "bla", b = "blub" );
+    concat3( a = "sha", b = "lala" );
         
     
 Solution a-1.3
 ^^^^^^^^^^^^^^^^
 
-Given the following state::
+Given the following definitions::
 
-    x = 5;
-    y = x;
+    let x : Str = 5;
+    let y : Str = x;
     
-On updating the variable ``x = 6;`` the variable ``y`` implicitly also changes its value. That is because the variable ``y`` does not hold a literal value but is a placeholder for the expression ``x``. Hence, it will always evaluate to whatever ``x`` is. In this Cuneiform's Call-By-Name evaluation strategy differs from most general purpose programming language which use a Call-By-Value evaluation strategy.
+On updating the variable ``let x : Str = 6;`` the variable ``y`` keeps its value because it refers to a different definition of ``x`` than the current one. This is called shadowing. It is impossible to taint old definitions by rebinding variables. The current ``x`` is a different variable than the ``x`` appearing in the definition of ``y``. Using the ``hist`` command shows all definitions in the order they were introduced. Shadowed definitions are also shown.
 
 
 
