@@ -79,8 +79,8 @@ Appears in:
 
 .. _syntax-lang:
 
-Language
---------
+Foreign Language
+----------------
 
 **lang:**
 

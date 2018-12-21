@@ -10,9 +10,9 @@ Expression
 Uses:
 
 - :ref:`syntax-var-e`
+- :ref:`syntax-app-e`
 - :ref:`syntax-str-e`
 - :ref:`syntax-file-e`
-- :ref:`syntax-app-e`
 - :ref:`syntax-bool-e`
 - :ref:`syntax-cond-e`
 - :ref:`syntax-list-e`
@@ -37,6 +37,24 @@ Variable
 **var-e:**
 
 .. image:: img/var-e.png
+
+Appears in:
+
+- :ref:`syntax-e`
+
+
+.. _syntax-app-e:
+
+Function Application
+--------------------
+
+**app-e:**
+
+.. image:: img/app-e.png
+
+Uses:
+
+- :ref:`syntax-e`
 
 Appears in:
 
@@ -70,24 +88,6 @@ File
 Appears in:
 
 - :ref:`syntax-e`
-
-.. _syntax-app-e:
-
-Function Application
---------------------
-
-**app-e:**
-
-.. image:: img/app-e.png
-
-Uses:
-
-- :ref:`syntax-e`
-
-Appears in:
-
-- :ref:`syntax-e`
-
 
 .. _syntax-bool-e:
 
