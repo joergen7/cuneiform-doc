@@ -1,2 +1,2 @@
-Visualize Runs with Cfplot
-===========================
+Visualizing Runs with Cfplot
+============================
