@@ -86,8 +86,7 @@ html_theme_options = {
   'github_user': 'joergen7',
   'github_repo': 'cuneiform',
   'fixed_sidebar': True,
-  'description': 'functional workflow lang',
-  'page_width': 800
+  'description': 'functional workflow lang'
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
