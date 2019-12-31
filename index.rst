@@ -1,5 +1,5 @@
 Home
-=========
+====
 
 .. image:: img/cuneiform_title.jpg
   :width: 800
@@ -8,9 +8,21 @@ Home
 
 
 .. toctree::
-   :hidden:
+  :hidden:
 
-Cuneiform is a functional programming language for large-scale data analysis workflows. It is open because it easily integrates foreign tools and libraries, e.g., Python libraries or command line tools. It is general because it has the expressive power of a functional programming language while automatically parallelizing and distributing program execution. Cuneiform uses distributed Erlang to scalably run in cluster and cloud environments.
+  about
+  news/index
+  download
+  publication
+  videos
+  tutorial/index
+  guide/index
+  explain/index
+  reference/index
+
+
+
+Cuneiform is a language for large-scale data analysis. It is open because it easily integrates foreign tools and libraries, e.g., Python libraries or command line tools. It is general because it has the expressive power of a functional programming language. Cuneiform uses distributed Erlang to scalably run in cluster and cloud environments.
 
 .. code::
 
@@ -65,3 +77,8 @@ Theoretic Foundation
 --------------------
 
 Cuneiform is designed from both, a programming language and a distributed systems perspective. Its language semantics are defined in terms of reduction semantics while communication, distributed coordination, and fault tolerance are specified using Petri nets.
+
+Resources
+---------
+
+* Source code on `GitHub <https://github.com/joergen7/cuneiform/>`_
