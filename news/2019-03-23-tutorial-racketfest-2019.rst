@@ -1,0 +1,11 @@
+Tutorial Racketfest 2019
+========================
+
+On 2019-03-23 I held a tutorial on parallel computation with Racket places at [Racketfest <https://racketfest.com>`_ in Berlin.
+
+Parallelism in Racket
+---------------------
+
+We use parallel computation, independent state, and message passing every day. Our world is wired around webservers and load-balancers. Racket allows us to create our parallel computation network inside a laptop.
+
+In this tutorial we give a short introduction to Racket places. We introduce the basic concepts for independent computation and approach step-by-step how to use Racket places. Lastly, we play with examples including a worker pool manager. Essentially, we fork-bomb Racket.

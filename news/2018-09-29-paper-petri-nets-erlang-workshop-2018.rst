@@ -1,0 +1,13 @@
+Petri Net Paper At Erlang Workshop 2018
+=======================================
+
+2018-09-29
+
+Our short paper has been accepted at the `Seventeenth ACM SIGPLAN Erlang Workshop <http://erlang.org/workshop/2018/>`_ 2018 and I presented it on 2018-09-29 in St. Louis, Missouri.
+
+Modeling Erlang Processes as Petri Nets
+---------------------------------------
+
+Distributed systems are more important in systems design than ever. Partitioning systems into independent, distributed components has many advantages but also brings about design challenges. The OTP framework addresses such challenges by providing process templates that separate application-dependent from application-specific logic. This way the OTP framework hosts a variety of modeling techniques, e.g., finite state machines.
+
+Petri nets are a modeling technique especially suited for distributed systems. We introduce gen_pnet, a behavior for designing Erlang processes as Petri nets. We give a short introduction to Petri net semantics and demonstrate how Erlang applications can be modeled as Petri nets. Furthermore, we discuss two Erlang applications modeled and implemented as Petri nets. For both applications we introduce a Petri net model and discuss design challenges.

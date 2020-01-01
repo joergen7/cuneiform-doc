@@ -56,12 +56,22 @@ Integrate Your Software
 
 The flexible foreign function interface lets you integrate tools and libraries from many different sources. This allows you to drive a heterogeneous software collection through a uniform interface. Currently, the following foreign languages are supported:
 
-====== ========== ========== ======
-Awk    Gnuplot    GNU Octave Racket
-Bash   Java       Perl
-Elixir Javascript Python
-Erlang MATLAB     R
-====== ========== ========== ======
+.. hlist::
+  :columns: 4
+
+  * Awk
+  * Bash
+  * Elixir
+  * Erlang
+  * Gnuplot
+  * Java
+  * Javascript
+  * MATLAB
+  * GNU Octave
+  * Perl
+  * Python
+  * R
+  * Racket
 
 Functional Programming
 ----------------------

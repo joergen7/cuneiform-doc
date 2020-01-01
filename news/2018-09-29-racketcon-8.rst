@@ -1,0 +1,24 @@
+Talk at Eighth RacketCon
+========================
+
+On 2018-09-29 I gave a talk at the `Eighth RacketCon <https://con.racket-lang.org/>`_ held from 2018-09-29 to 2018-09-30 in St. Louis, Missouri.
+
+Petri Net Flavored Places: An Advanced Transition System for Distributed Computing in Racket
+--------------------------------------------------------------------------------------------
+
+Places provide a way to specify parallel and distributed computation in
+Racket. Using places we can set up independent services that communicate
+via channels. Often state machines are used in this setting to model
+session state, resource allocation, or service start order. However,
+plain state machines often suffer from the explosion of the state space
+as soon as multiple state variables appear in combination. Also some
+applications have only an infinite representation, if modeled as a state
+machine.
+
+In this talk, we address these challenges by introducing pnet, a Racket
+library that allows to define Racket places as Petri nets. Petri nets
+are a class of transition systems representing state as tokens produced
+and consumed by transitions. We consider several examples for Petri nets
+as Racket places such as a worker pool and consider the possibility of
+driving the pnet library from a tailor-made DSL or using it to construct
+distributed programming languages.

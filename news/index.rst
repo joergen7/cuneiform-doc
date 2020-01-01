@@ -4,6 +4,18 @@ News
 .. toctree::
   :maxdepth: 1
 
+  2020-02-27-tutorial-racketfest-2020
+  2019-12-31-website-reboot
+  2019-03-23-tutorial-racketfest-2019
+  2019-01-15-talk-after-work-racket-2
+  2018-11-19-release-cuneiform-3-0-4
+  2018-09-29-racketcon-8
+  2018-09-29-paper-petri-nets-erlang-workshop-2018
+  2018-06-01-talk-code-beam-sto-2018
+  2018-04-17-release-cuneiform-3-0-3
+  2018-03-22-release-cuneiform-3-0-2
+  2018-03-20-release-cuneiform-3-0-1
+  2018-02-27-release-cuneiform-3-0-0
   2017-07-21-paper-cuneiform-semantics-accept-jfp
   2016-12-22-bux-paper-hiway-accept-edbt-2017
   2016-11-24-talk-erlang-factory-lite-2016
