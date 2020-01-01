@@ -1,6 +1,8 @@
 Website Reboot
 ==============
 
+2019-12-31
+
 I have rebooted the Cuneiform Website to improve my publishing workflow and to accomodate for planned changes.
 
 One reason for the reboot is that I grew uncomfortable with the Jekyll-based website because I found it hard working around Ruby's iffiness. Somehow my distribution's package manager apt, Ruby's package manager gem, and bundle disagreed about what software is on my system and in what version. I do not want to micro-manage Ruby dependencies anymore. There are other static site generators with a more convenient workflow.

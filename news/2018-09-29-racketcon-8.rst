@@ -1,6 +1,8 @@
 Talk at Eighth RacketCon
 ========================
 
+2018-09-29
+
 On 2018-09-29 I gave a talk at the `Eighth RacketCon <https://con.racket-lang.org/>`_ held from 2018-09-29 to 2018-09-30 in St. Louis, Missouri.
 
 Petri Net Flavored Places: An Advanced Transition System for Distributed Computing in Racket

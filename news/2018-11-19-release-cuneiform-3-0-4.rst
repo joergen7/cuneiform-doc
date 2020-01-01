@@ -1,6 +1,8 @@
 Release Cuneiform 3.0.4
 =======================
 
+2018-11-19
+
 I have released `Cuneiform 3.0.4 <https://github.com/joergen7/cuneiform/releases/tag/3.0.4>`_. This release brings performance improvements to the Cuneiform interpreter. This means that much larger programs can be evaluated. Also, more type annotations have been added to the language, making more explicit the in-going and out-going types of iteration expressions. Moreover, it adds Elixir foreign language support.
 
 Compatibility

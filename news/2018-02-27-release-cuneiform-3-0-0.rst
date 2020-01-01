@@ -1,6 +1,8 @@
 Release Cuneiform 3.0.0
 =======================
 
+2018-02-27
+
 I have released `Cuneiform 3.0.0 <https://github.com/joergen7/cuneiform/releases/tag/3.0.0>`_.
 
 * Introduce new surface syntax
