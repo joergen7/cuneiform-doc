@@ -1,6 +1,8 @@
 Irina Guberman Talks About Cuneiform at Erlang Factory 2016
 ===========================================================
 
+2016-03-11
+
 On 2016-03-11 `Irina Guberman <https://twitter.com/irina_guberman>`_ gave a talk about Cuneiform at `Erlang Factory <http://www.erlang-factory.com/sfbay2016/irina-guberman>`_ in San Francisco.
 
 Cuneiform: DSLs for Scientific Workflows

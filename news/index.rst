@@ -4,6 +4,13 @@ News
 .. toctree::
   :maxdepth: 1
 
+  2017-07-21-paper-cuneiform-semantics-accept-jfp
+  2016-12-22-bux-paper-hiway-accept-edbt-2017
+  2016-11-24-talk-erlang-factory-lite-2016
+  2016-10-28-poster-bsr-winterschool-2016
+  2016-10-17-release-cuneiform-2-2-1
+  2016-09-08-talk-euc-2016
+  2016-07-19-talk-curry-on-2016
   2016-04-13-release-cuneiform-2-2-0
   2016-04-11-release-cuneiform-2-0-4
   2016-03-11-guberman-erlang-factory

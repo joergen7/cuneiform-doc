@@ -1,0 +1,17 @@
+Talk at Curry On 2016
+=====================
+
+2016-07-19
+
+I presented at `Curry On 2016 <http://www.curry-on.org/2016/sessions/functional-programming-and-foreign-language-interfaces.html>`_ in Rome from 2016-07-18 to 2016-07-19.
+
+The `video <https://www.youtube.com/watch?v=E6fpICLZ1cw>`_ is available online.
+
+Functional Programming and Foreign Language Interfaces: Essentials in Distributed Computing
+-------------------------------------------------------------------------------------------
+
+The need to analyze massive scientific data sets on the one hand and the availability of distributed compute resources with an increasing number of CPU cores on the other hand have promoted the development of a variety of languages and systems for parallel, distributed data analysis.
+
+In this talk we argue that both integrating existing tools and libraries and expressing complex workflows in a functional programming model are necessities in contemporary languages for distributed computing.
+
+We demonstrate the usefulness of these features by the example of Cuneiform, a minimal functional language for large-scale scientific data analysis running on the Erlang VM. We discuss applications in bioinformatics and machine learning.
