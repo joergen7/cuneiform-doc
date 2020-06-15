@@ -1,5 +1,5 @@
-Journal
-=======
+Explanations
+============
 
 .. toctree::
   :maxdepth: 1

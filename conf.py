@@ -20,7 +20,7 @@
 # -- Project information -----------------------------------------------------
 
 project = u'Cuneiform'
-copyright = u'2019, Jörgen Brandt'
+copyright = u'2013-2020, Jörgen Brandt'
 author = u'Jörgen Brandt'
 
 # The short X.Y version
@@ -83,8 +83,8 @@ html_theme = 'alabaster'
 #
 html_theme_options = {
   'show_powered_by': False,
-  'github_user': 'joergen7',
-  'github_repo': 'cuneiform',
+  #'github_user': 'joergen7',
+  #'github_repo': 'cuneiform',
   'description': 'functional workflow lang'
 }
 
