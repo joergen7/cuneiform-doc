@@ -4,11 +4,6 @@
 
 ## System Requirements
 
-- [Erlang](https://www.erlang.org) OTP 19.0 or higher
-- [Rebar3](https://www.rebar3.org) 3.0.0 or higher
-
-## System Requirements
-
 - [Sphinx](https://www.sphinx-doc.org/en/master/) Python documentation generator
 - [GNU Make](https://www.gnu.org/software/make/) build system
 
