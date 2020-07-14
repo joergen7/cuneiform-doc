@@ -9,6 +9,8 @@ Jörgen Brandt, Wolfgang Reisig, and Ulf Leser. `Computation Semantics of the Fu
 
 Marc Bux, Jörgen Brandt, Carl Witt, Jim Dowling, and Ulf Leser. `Hi-WAY: Execution of Scientific Workflows on Hadoop YARN <https://openproceedings.org/2017/conf/edbt/paper-248.pdf>`_. *Proceedings of the 20th International Conference on Extending Database Technology (EDBT)*, 2017.
 
+Liam Harold Childs, Soulafa Mamlouk, Jörgen Brandt, Christine Sers, and Ulf Leser. `SoFIA: a data integration framework for annotating high-throughput datasets <https://academic.oup.com/bioinformatics/article/32/17/2590/2450746>`_. *Bioinformatics*, 2016.
+
 Jörgen Brandt, Marc Bux, and Ulf Leser. `Cuneiform: a Functional Language for Large Scale Scientific Data Analysis <http://ceur-ws.org/Vol-1330/paper-03.pdf>`_. *Proceedings of the Workshops of the EDBT/ICDT 2015 Joint Conference*, 2015.
 
 Marc Bux, Jörgen Brandt, Carsten Lipka, Kamal Hakimzadeh, Jim Dowling, and Ulf Leser. `Saasfee: Scalable Scientific Workflow Execution Engine <http://dx.doi.org/10.14778/2824032.2824094>`_. *Proceedings of the VLDB Endowment*, 2015.
