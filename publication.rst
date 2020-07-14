@@ -1,6 +1,8 @@
 Publications
 ============
 
+Christopher Schiefer, Marc Bux, Jörgen Brandt, Clemens Messerschmidt, Knut Reinert, Dieter Beule, Ulf Leser. `Portability of Scientific Workflows in NGS Data Analysis: A Case Study <http://arxiv.org/abs/2006.03104>`_. *arXiv*, 2020.
+
 Jörgen Brandt and Wolfgang Reisig. `Modeling Erlang Processes as Petri Nets <https://dl.acm.org/doi/abs/10.1145/3239332.3242767>`_. *Proceedings of the 17th ACM SIGPLAN International Workshop on Erlang (Erlang 2018)*, 2018.
 
 Jörgen Brandt, Wolfgang Reisig, and Ulf Leser. `Computation Semantics of the Functional Scientific Workflow Language Cuneiform <https://www.cambridge.org/core/journals/journal-of-functional-programming/article/computation-semantics-of-the-functional-scientific-workflow-language-cuneiform/1A3B8AB825939117C5BD9F850F63ADCC>`_. *Journal of Functional Programming*, 2017.
