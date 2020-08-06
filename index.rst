@@ -12,13 +12,15 @@ Home
 
   about
   news/index
-  download
   publication
   videos
-  tutorial/index
-  guide/index
-  explain/index
-  reference/index
+
+..
+   download
+   tutorial/index
+   guide/index
+   explain/index
+   reference/index
 
 
 
