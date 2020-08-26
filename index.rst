@@ -11,6 +11,7 @@ Home
   :hidden:
 
   about
+  faq
   news/index
   publication
   videos
@@ -24,7 +25,15 @@ Home
 
 
 
-Cuneiform is a language for large-scale data analysis. It is open because it easily integrates foreign tools and libraries, e.g., Python libraries or command line tools. It is general because it has the expressive power of a functional programming language. Cuneiform uses distributed Erlang to scalably run in cluster and cloud environments.
+Cuneiform is a language for large-scale data analysis. It is open because it easily integrates foreign tools and libraries, e.g., Python libraries or command line tools. It is general because it has the expressive power of a functional programming language. Cuneiform scales to large clusters and clouds.
+
+.. caution::
+   This page is incomplete. In particular, the user documentation, links to the developer documentation, and a download section are missing.
+
+Open Source
+-----------
+
+Cuneiform is an open source software project. We distribute it under the `Apache License, Version 2.0 <https://apache.org/licenses/LICENSE-2.0.html>`_.
 
 .. code::
 
@@ -61,11 +70,11 @@ The flexible foreign function interface lets you integrate tools and libraries f
 .. hlist::
   :columns: 4
 
-  * Awk
+  * Awk (in progress)
   * Bash
   * Elixir
   * Erlang
-  * Gnuplot
+  * Gnuplot (in progress)
   * Java
   * Javascript
   * MATLAB
