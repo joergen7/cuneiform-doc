@@ -29,10 +29,10 @@ The way we deal with the complexities of distributed computing is twofold: (i) M
 
 Programming languages are writing systems. Cuneiform is one of the oldest writing systems we know about. So I thought it would be a fitting name for the least-old writing system around. Also, I was too ignorant to notice that there is already an open source `OCR software <https://en.wikipedia.org/wiki/CuneiForm_(software)>`_ with the same name.
 
-**I have been using Snakemake/Nextflow/CWL. I have always got my work done. Do I really need all this fancy-schmancy recursive higher-order heiopei?**
+**I have always got my work done. Do I really need all this fancy-schmancy recursive higher-order heiopei?**
 
 Which language features are useful depends on the use case. It could be that the use cases you deal with really do not depend on features only a functional programming language can offer. In this case, you might be happy with the workflow language you already use. If, however, your use cases do depend on such features it might still be possible that you can get your work done somehow. I would think you are in for an improvement though.
 
-**All my friends are using Kafka/Flink/Spark. Everyone knows these systems and there are active communities around them. No one knows Cuneiform and a community is pretty much non-existent. Why would I do this to myself?**
+**There are other well-known systems with active communities. No one knows Cuneiform and a community is pretty much non-existent. Why would I do this to myself?**
 
 I am aware, that the risk profile of using Cuneiform is slightly higher than that of any other piece of software you can find out there.
