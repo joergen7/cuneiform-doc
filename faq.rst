@@ -1,5 +1,5 @@
-FAQ
-===
+Frequently Asked Questions
+==========================
 
 **Why do another data flow language? Are there not enough languages already?**
 
