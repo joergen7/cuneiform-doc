@@ -12,8 +12,9 @@ Home
 
   about
   faq
-  news/index
+  news
   publication
+  release
   videos
 
 ..

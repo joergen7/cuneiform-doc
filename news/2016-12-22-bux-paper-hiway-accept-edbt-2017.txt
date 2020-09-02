@@ -1,5 +1,5 @@
 Bux Hi-WAY Paper Accepted at EDBT 2017
-======================================
+--------------------------------------
 
 2016-12-22
 
@@ -7,7 +7,6 @@ Marc Bux's paper has been accepted at the EDBT 2017 conference. It presents the 
 
 Marc's `paper <https://openproceedings.org/2017/conf/edbt/paper-248.pdf>`_ is available online.
 
-Hi-WAY: Execution of Scientific Workflows on Hadoop YARN
---------------------------------------------------------
+**Hi-WAY: Execution of Scientific Workflows on Hadoop YARN**
 
 Scientific workflows provide a means to model, execute, and exchange the increasingly complex analysis pipelines necessary for today’s data-driven science. However, existing scientific workflow management systems (SWfMSs) are often limited to a single workflow language and lack adequate support for large-scale data analysis. On the other hand, current distributed dataflow systems are based on a semi-structured data model, which makes integration of arbitrary tools cumbersome or forces re-implementation. We present the scientific workflow execution engine Hi-WAY, which implements a strict black-box view on tools to be integrated and data to be processed. Its generic yet powerful execution model allows Hi-WAY to execute workflows specified in a multitude of different languages. Hi-WAY compiles workflows into schedules for Hadoop YARN, harnessing its proven scalability. It allows for iterative and recursive workflow structures and optimizes performance through adaptive and data-aware scheduling. Reproducibility of workflow executions is achieved through automated setup of infrastructures and re-executable provenance traces. In this application paper we discuss limitations of current SWfMSs regarding scalable data analysis, describe the architecture of Hi-WAY, highlight its most important features, and report on several large-scale experiments from different scientific domains.
