@@ -15,7 +15,7 @@ We aim to integrate as many languages as we can. If you do not find your favorit
 
 **Cuneiform is a student project and many students abandon their project after graduating. What's the guarantee that Cuneiform continues to develop?**
 
-We will make all efforts to maintain Cuneiform in the future. Consider contributing or joining the team to hlep it grow!
+We will make all efforts to maintain Cuneiform in the future. Consider contributing or joining the team to help it grow!
 
 **I understand the general idea behind Cuneiform, but can it be implemented?**
 
