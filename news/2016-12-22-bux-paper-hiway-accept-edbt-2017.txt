@@ -5,7 +5,7 @@ Bux Hi-WAY Paper Accepted at EDBT 2017
 
 Marc Bux's paper has been accepted at the EDBT 2017 conference. It presents the `Hi-WAY <https://github.com/marcbux/Hi-WAY>`_ workflow execution environment based on Hadoop YARN which, among other workflow languages, runs Cuneiform.
 
-Marc's `paper <https://openproceedings.org/2017/conf/edbt/paper-248.pdf>`_ is available online.
+The `paper <https://openproceedings.org/2017/conf/edbt/paper-248.pdf>`__ is available online.
 
 **Hi-WAY: Execution of Scientific Workflows on Hadoop YARN**
 

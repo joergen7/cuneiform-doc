@@ -1,6 +1,7 @@
 News
 ====
 
+.. include:: news/2020-09-07-paper-portability-arxiv.txt
 .. include:: news/2020-02-27-tutorial-racketfest-2020.txt
 .. include:: news/2019-12-31-website-reboot.txt
 .. include:: news/2019-03-23-tutorial-racketfest-2019.txt
