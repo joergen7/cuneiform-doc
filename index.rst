@@ -12,6 +12,7 @@ Home
 
   about
   faq
+  get_involved
   news
   publication
   release
