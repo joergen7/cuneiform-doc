@@ -12,6 +12,7 @@ Home
 
   about
   faq
+  first_steps
   get_involved
   news
   publication
