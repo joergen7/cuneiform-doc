@@ -40,6 +40,20 @@ Build the static HTML site by entering
 Leave
 
 	deactivate
+	
+## Upgrade
+
+To upgrade the virtual environment, first enter it
+
+	source venv/bin/activate
+	
+Then install re-install sphinx with the `--upgrade` flag:
+
+	pip3 install --upgrade sphinx
+	
+Leave
+
+	deactivate
 
 ## Resources
 
