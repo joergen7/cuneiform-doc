@@ -20,7 +20,7 @@
 # -- Project information -----------------------------------------------------
 
 project = u'Cuneiform'
-copyright = u'2013-2020, Jörgen Brandt'
+copyright = u'2013-2022, Jörgen Brandt'
 author = u'Jörgen Brandt'
 
 # The short X.Y version
