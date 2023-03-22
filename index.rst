@@ -86,6 +86,7 @@ The flexible foreign function interface lets you integrate tools and libraries f
   * Python
   * R
   * Racket
+  * `Wal <https://wal-lang.org/>`_
 
 Functional Programming
 ----------------------
