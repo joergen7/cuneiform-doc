@@ -1,9 +1,0 @@
-Release Cuneiform 2.0.3
------------------------
-
-2016-01-07
-
-I have released `Cuneiform 2.0.3 <https://github.com/joergen7/cuneiform/releases/tag/2.0.3-RELEASE>`_.
-
-It is now possible to launch Cuneiform as a simple `java -jar ...` call.
-

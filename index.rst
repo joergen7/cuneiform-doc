@@ -16,15 +16,10 @@ Home
   get_involved
   news
   publication
-  release
   videos
+  user-doc
+  dev-doc
 
-..
-   download
-   tutorial/index
-   guide/index
-   explain/index
-   reference/index
 
 
 
