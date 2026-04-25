@@ -13,15 +13,15 @@
 
 In the `cuneiform-doc` directory run
 
-    virtualenv venv
+    virtualenv .venv
 
 This creates a directory `venv` that holds the virtual environment's data. To enter the virtual environment run
 
-    source venv/bin/activate
+    source .venv/bin/activate
 
 We can see that we are inside the virtual environment because the shell prompt has a `(venv)` prefix. Now, install the necessary software.
 
-    pip3 install sphinx
+    pip install -r requirements.txt
 
 To leave the virtual environment run
 
@@ -31,7 +31,7 @@ To leave the virtual environment run
 
 Enter the previously prepared virutal environment by sourcing its `activate` script
 
-    source venv/bin/activate
+    source .venv/bin/activate
 	
 Build the static HTML site by entering
 
